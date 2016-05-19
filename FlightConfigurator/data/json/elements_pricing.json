@@ -1,0 +1,28 @@
+{
+    "cabin": {
+      "toilet":[{
+        "name":"Galley03",
+        "price":1234555
+      },
+      {
+        "name":"Partition",
+        "price":5000,
+      },
+      {
+        "name":"Stowage",
+        "price":67888
+      }],
+    "taile":[{
+      "name":"Lavatory",
+      "price":12345
+    },
+    {
+      "name":"Partition",
+      "price":15000,
+    },
+    {
+      "name":"Stowage",
+      "price":6700
+    }]
+  }
+}

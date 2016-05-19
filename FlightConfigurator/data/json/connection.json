@@ -1,0 +1,18 @@
+{
+    "accounts": {
+      "accountAirlines":[{
+        "id":1,
+        "login":"airlines",
+        "password":"123456",
+        "families":["A320"],
+        "logo":"/img/airfrance.png"
+        }
+      ],
+      "accountCT":[{
+        "id":1,
+        "login":"ct",
+        "password":"123456"
+      }
+    ]
+  }
+}

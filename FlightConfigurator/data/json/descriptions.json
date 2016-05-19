@@ -1,0 +1,126 @@
+{
+    "description": {
+      "bfe":[{
+        "id":0,
+        "img":"img/Seat_First.jpg",
+        "comment":"img/test.gif",
+        "title":"Large Choice of BFE B/C seats",
+        "desc":"The B/C mechanical business class seat offers a variety of comfort features. Passengers will experience a comfortable flight thanks to  generous recline and an oversized headrest."
+      },
+      {
+        "id":1,
+        "img":"img/Avod.png",
+        "title":"Define your own level",
+        "desc":"AVOD by  Airbus is the most advanced IFE system architecture.  It’s a proven solution that offers unmatched performance and reliability. Provides high-value media content capacity and the ability to offer Audio Video on Demand (AVOD) at every seat, the system ensures that every passenger will enjoy an immersive and entertaining experience while onboard the aircraft."
+      },
+      {
+        "id":2,
+        "img":"img/IN_Seat_Audio.jpg",
+        "title":"Define your own level",
+        "desc":"In-seat Audio by  Airbus is the most advanced IFE system architecture.  It’s a proven solution that offers unmatched performance and reliability. Provides high-value media content capacity and the ability to offer In-seat Audio at every seat, the system ensures that every passenger will enjoy an immersive and entertaining experience while onboard the aircraft."
+      },
+      {
+        "id":3,
+        "img":"img/Overhead_video.jpg",
+        "title":"Define your own level",
+        "desc":"Overhead video by  Airbus is the most advanced IFE system architecture.Its modular design can simultaneously support overhead, in-seat distributed and on-demand content distribution on a single aircraft. This approach  accommodates maximum fleet commonality, installation flexibility and future upgrade potential."
+      },
+      {
+        "id":4,
+        "img":"img/In_Sear_Power.jpg",
+        "title":"Large Choice of BFE B/C seats",
+        "desc":"In Seat Power by  Airbus is one of the most technologically advanced aircraft in-seat power and cabin power management systems. The product is designed to guarantee airline passengers sufficient power to use their personal electronic devices, including laptops, smartphones and tablets, while in flight."
+      },
+      {
+        "id":5,
+        "img":"img/Windscreen.jpg",
+        "title":"A cabin tailored to your needs",
+        "desc":"More space for the passengers/Privacy for the crew/Working area secured"
+      },
+      {
+        "id":6,
+        "img":"img/SFE_seat.jpg",
+        "title":"RECARO  3530Swift The Airbus SFE Seat Offer",
+        "desc":"Secure a seat solution for all customers, as alternative to BFE catalogue options:whatever the fleet size in line fit and retrofit with short ordering lead-time (CDF in line fit, 4 months in retrofit)"
+      },
+      {
+        "id":7,
+        "img":"img/Windscreen.jpg",
+        "title":"A cabin tailored to your needs",
+        "desc":"More space for the passengers Privacy for the crew Working area secured"
+      },
+      {
+        "id":8,
+        "img":"img/Lavatory.jpg",
+        "title":"Hygienic and Convenient",
+        "desc":"The toilet segment boasts state-of-the-art are design and intelligent functionality with different levels of categories from standard to efficient."
+      },
+      {
+        "id":9,
+        "img":"img/Galley3_Dry_HS.png",
+        "title":"Customize your galley",
+        "desc":"The SFE galley is equipped with the following items: Monolingual placards 1 single bumper 3 stowage compartments"
+      },
+      {
+        "id":10,
+        "img":"img/Galley3_Dry_FS.png",
+        "title":"Customize your galley",
+        "desc":"The SFE galley is equipped with the following items: Monolingual placards 1 single bumper 3 stowage compartments 1 pull out device for double deep standard unit partments"
+      },
+      {
+        "id":11,
+        "img":"img/Galley3_Wet_FS.jpg",
+        "title":"Customize your galley",
+        "desc":"The SFE galley is equipped with the following items: Monolingual placards Cold weather supply water insulation 1 single bumper 1 fresh air gasper in work area 2 stowage compartments 1 pull out device for double deep standard unit partments 1 electrical panel"
+      },
+      {
+        "id":12,
+        "img":"img/Galley_G5.jpg",
+        "title":"Customize your galley",
+        "desc":"Galley G4, 4 FS"
+      },
+      {
+        "id":13,
+        "img":"img/Galley_G5.jpg",
+        "title":"Customized your galley and Improve your categories",
+        "desc":"Galley G5, 7 FS Trolleys"
+      },
+      {
+        "id":14,
+        "img":"img/Space_Flex_Lavatory.jpg",
+        "title":"Free up space for additional seats",
+        "desc":"Space flex lavatory module"
+      },
+      {
+        "id":15,
+        "img":"img/Galley_G5.jpg",
+        "title":"Free up space for additional seats",
+        "desc":"Premium galley design with further provisions for a high number of additional options. Flexibility to provision for or to install multiple galley cooling options."
+      },
+      {
+        "id":16,
+        "img":"img/Moodlight.jpg",
+        "title":"Making magic out of light",
+        "desc":"16.7 million shades of colors For customized ambiances & well-being"
+      },
+      {
+        "id":17,
+        "img":"img/Floor_light.jpg",
+        "title":"A cabin tailored to your needs",
+        "desc":"the latest next-generation emergency exit lighting solution helping to save significant costs, both operational and maintenance"
+      },
+      {
+        "id":18,
+        "img":"img/OHSC_Handrail.jpg",
+        "title":"Light as a consistent branding message",
+        "desc":"Handrail branding can remain, even when lights are dimmed"
+      },
+      {
+        "id":19,
+        "img":"img/Seat_Second.jpg",
+        "title":"Large Choice of BFE B/C seats",
+        "desc":"The B/C mechanical business class seat offers a variety of comfort features. Passengers will experience a comfortable flight thanks to  generous recline and an oversized headrest."
+      }
+    ]
+  }
+}

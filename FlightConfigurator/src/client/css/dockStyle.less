@@ -1,0 +1,121 @@
+#dock img {
+  width: 64px;
+  height: 64px;
+  -webkit-box-reflect: below 2px
+            -webkit-gradient(linear, left top, left bottom, from(transparent),
+            color-stop(0.7, transparent), to(rgba(255,255,255,.5))); /* reflection is supported by webkit only */
+  -webkit-transition: all 0.3s;
+  -webkit-transform-origin: 50% 100%;
+}
+#dock img:hover  {
+  -webkit-transform: scale(2);
+  margin: 0 2em;
+}
+#dock img:hover + img,
+#dock img.prev  {
+  -webkit-transform: scale(1.5);
+  margin: 0 1.5em;
+}
+
+/* rotate In #1 */
+.hover00 {
+	-webkit-transform: scale(1);
+	transform: scale(1) rotateX(0deg);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover00:hover  {
+	-webkit-transform: scale(1);
+	transform: scale(1) rotateX(20deg);
+}
+
+/* zoom In #1 */
+.hover01 {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01:hover  {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+/* Shine */
+.hover14 {
+	position: relative;
+}
+.hover14::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+.hover14:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+/* Gray Scale */
+.hover08 {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover08:hover{
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+/* Blur */
+.hover07 {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover07:hover{
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+
+/* Flashing */
+.hover13:hover {
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}

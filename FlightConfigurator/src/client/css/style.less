@@ -1,0 +1,202 @@
+@import './configuratorStyle';
+@import './imagesStyle';
+@import './button';
+@import './checkbox';
+@import './dockStyle';
+@font-face {
+    font-family: HelveticaNeue;
+    src: url("../fonts/HelveticaNeueLTStd Lt.otf");
+}
+
+html, body, #wrapper, #page-content-wrapper {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	//background: #333333;
+	color:white;
+	font-family: "HelveticaNeue";
+/*  position:absolute;
+  height:100%;
+  width:100%;*/
+  background-size: 100% 100%;
+  background-image:url('../img/src/AvionsBG.png');
+  background-repeat: no-repeat;
+}
+hr{
+	margin : 0;
+	border-top : 1px solid white;
+}
+
+.commercialSelect{
+	border: 1px solid #ccc;
+	color:white;
+	//-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	height:30px;
+	margin:5px;
+	border-radius:5px;
+ 	background:#FF910A;
+	&>option{
+		background:#FF910A !important
+	}
+}
+
+select {
+   border: 1px solid #ccc;
+	 color:white;
+   //-webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+	 height:30px;
+	 margin:5px;
+	 border-radius:5px;
+  background:#486677;
+}
+
+select >option{
+	background:#486688
+}
+
+dt, kbd kbd, label {
+    font-weight: 100;
+}
+
+.input{
+	background : #497C9B;
+	width:40px;
+	border-radius:4px;
+	border-color:white;
+	color:white;
+	text-align: center;
+	margin-left:2px;
+}
+
+.NameConfig{
+	background : #497C9B;
+	width:260px;
+	border-radius:4px;
+	border-color:white;
+	color:white
+}
+
+.logo{
+border-bottom : 1px solid #FFFFFF;
+padding:10px;
+}
+.connect{
+	position:absolute;
+	height:100%;
+	width:100%;
+	background-size: 100% 100%;
+	background-image:url('../img/src/AvionsBG.png');
+	background-repeat: no-repeat;
+}
+
+.inputLogin{
+	//border-radius: 5px;
+	border:1px solid white;
+	background-color: #2C5A7B;
+	margin:3px;
+	color:white;
+  width:300px;
+}
+
+.inputPassword{
+	//border-radius: 5px;
+	border:1px solid white;
+	background-color: #2C5A7B;
+	margin:3px;
+	color:white;
+  width:300px;
+}
+
+
+.popover {
+    position:absolute;
+    display:none;
+    background:#fff;
+    border: 1px solid #999;
+    padding:10px;
+    width:auto;
+    box-shadow:0 0 10px rgba(0, 0, 0, .5);
+}
+
+table{
+  //  border: 1px solid white;
+		color:white;
+		width:100%;
+}
+
+th, td {
+		border-top: 5px solid #3E4C55;
+		border-bottom: 5px solid #3E4C55;
+		border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+		background: #333333;
+		padding-left:8px;
+		padding-right: 8px;
+}
+
+tr{
+	font-size: 16px;
+}
+
+.configTable{
+	& th,& td{
+		border:none;
+		color:white;
+		background: none;
+		padding-left:8px;
+		padding-right: 8px;
+		text-align: right;
+	}
+	& tr{
+		font-size: 16px;
+		height:35px;
+	}
+	border:none;
+	color:white;
+	width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tdSolidBorder{
+	border-right:3px solid white !important;
+	padding-left:2px;
+}
+.tdSolidBorderLeft{
+	border-right:3px solid white !important;
+	padding-left:2px;
+	text-align: left !important;
+}
+.modal-dialog {
+    width: 97%;
+    margin: 10px 30px 0px 30px;
+}
+
+.backgroundTitle{
+	background: #3399CC;
+	height:30px;
+}
+
+.choicesPanel{
+	//border:1px solid #3399CC;
+	//width:98%;
+	//margin:5px auto auto auto;
+	padding-bottom:5px;
+	background: #486677;
+}
+
+.panel-group{
+	margin:1%;
+}
+
+.commercialPackageSize{
+	font-size:16px;
+	position:relative;
+	margin:2%;
+	top:3px;
+}
