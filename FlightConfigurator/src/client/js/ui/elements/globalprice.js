@@ -51,9 +51,9 @@ export default class Menu extends React.Component {
     return (
       <div className="globalprice">
         <div className="globalpriceback">
-          <div>Global Price</div>
-          <div style={{fontSize:'24px !important',fontWeight:'700 !important'}}>{formatter(this.state.globalprice)}</div>
-          <div style={{fontSize:'12px !important'}}>USD $ DC 01/2016</div>
+          <div style={{marginRight:'8px'}}>Global Price</div>
+          <div style={{fontSize:'24px !important',fontWeight:'700 !important',marginRight:'8px'}}>{formatter(this.state.globalprice)}</div>
+          <div style={{fontSize:'12px !important',marginRight:'8px'}}>USD DC 01/2016</div>
         </div>
       </div>
 

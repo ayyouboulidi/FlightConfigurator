@@ -7,6 +7,7 @@ import News from './startconfigComponent/newsAirlines'
 import ConfiguratorChoice from './startconfigComponent/configuratorChoice'
 import NewsCT from './startconfigComponent/newsCT'
 import CustomerCare from './startconfigComponent/customerCare'
+import CustomerCareAirlines from './startconfigComponent/customerCareAirlines'
 
 import SessionStore from '../store/session'
 
@@ -33,14 +34,14 @@ export default class StartConfigClient extends React.Component {
             <AircraftImage/>
             <LastConfig/>
             <News/>
-            <CustomerCare/>
+            {/*<CustomerCareAirlines/>*/}
           </div>
         :
           <div>
             <ConfiguratorChoice/>
             <LastConfig/>
             <NewsCT/>
-            <CustomerCare/>
+            {/*<CustomerCare/>*/}
           </div>
         }
       </div>

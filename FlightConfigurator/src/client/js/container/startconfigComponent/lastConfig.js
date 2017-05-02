@@ -47,9 +47,9 @@ export default class LastConfig extends React.Component {
     return (
       this.state.data == null || this.state.first == null ? <div>...Loading</div> :
       <div className="lastConfigPanel">
-      <span style={{float:'left',width:'25%'}}>Shopping card configuration</span>
+      <span style={{float:'left',width:'25%',fontSize:'20px'}}>Shopping cart configuration</span>
       <span style={{float:'right',width:'68%'}}>
-        <div style={{marginBottom:'15px'}}>Latest Configurations</div>
+        <div style={{marginBottom:'15px',fontSize:'18px'}}>Latest configurations</div>
         <hr></hr>
         <div style={{margin:'15px'}}>{this.state.first.lastConfig.conf[0].aircraft}  {this.state.first.lastConfig.conf[0].name} {this.state.first.lastConfig.conf[0].date}
         {session ?

@@ -2,7 +2,7 @@ import Store from './store'
 
 
 const store = Store();
-let globalprice = 164*5000+29000+153900;
+let globalprice = 29000+153900+70000;
 
 store.getStore$().subscribe((newPrice) => {
   globalprice = newPrice
@@ -16,7 +16,7 @@ export default {
     store.updateStore(globalPrice);
   },
   reset(){
-    store.updateStore(164*5000+29000+153900);
+    store.updateStore(29000+153900+70000);
   },
   get(){
     return globalprice;

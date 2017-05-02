@@ -3,35 +3,37 @@
 @import './button';
 @import './checkbox';
 @import './dockStyle';
+@import './slider';
 @font-face {
     font-family: HelveticaNeue;
     src: url("../fonts/HelveticaNeueLTStd Lt.otf");
 }
 
 html, body, #wrapper, #page-content-wrapper {
-	height: 100%;
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-	//background: #333333;
 	color:white;
 	font-family: "HelveticaNeue";
-/*  position:absolute;
-  height:100%;
-  width:100%;*/
-  background-size: 100% 100%;
-  background-image:url('../img/src/AvionsBG.png');
-  background-repeat: no-repeat;
+  position:absolute;
+	height:100%;
+	width:100%;
+	background-size: 100% 100%;
+	background-image:url('../img/src/AvionsBG.png');
 }
+
 hr{
 	margin : 0;
 	border-top : 1px solid white;
 }
 
+.h4Title {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px;
+    background-color: #FF910A;
+}
+
 .commercialSelect{
 	border: 1px solid #ccc;
 	color:white;
-	//-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	height:30px;
@@ -46,7 +48,6 @@ hr{
 select {
    border: 1px solid #ccc;
 	 color:white;
-   //-webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
 	 height:30px;
@@ -75,10 +76,10 @@ dt, kbd kbd, label {
 
 .NameConfig{
 	background : #497C9B;
-	width:260px;
-	border-radius:4px;
+	width:240px;
 	border-color:white;
-	color:white
+	color:white;
+  border:1px solid;
 }
 
 .logo{
@@ -95,20 +96,18 @@ padding:10px;
 }
 
 .inputLogin{
-	//border-radius: 5px;
 	border:1px solid white;
-	background-color: #2C5A7B;
+	background-color: white;
 	margin:3px;
-	color:white;
+	color:black;
   width:300px;
 }
 
 .inputPassword{
-	//border-radius: 5px;
 	border:1px solid white;
-	background-color: #2C5A7B;
+	background-color: white;
 	margin:3px;
-	color:white;
+	color:black;
   width:300px;
 }
 
@@ -124,7 +123,6 @@ padding:10px;
 }
 
 table{
-  //  border: 1px solid white;
 		color:white;
 		width:100%;
 }
@@ -158,17 +156,16 @@ tr{
 	}
 	border:none;
 	color:white;
-	width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+	width: 420px;
+  margin: auto;
 }
 
 .tdSolidBorder{
-	border-right:3px solid white !important;
+	border-right:1.5px solid white !important;
 	padding-left:2px;
 }
 .tdSolidBorderLeft{
-	border-right:3px solid white !important;
+	border-right:1.5px solid white !important;
 	padding-left:2px;
 	text-align: left !important;
 }
@@ -183,9 +180,6 @@ tr{
 }
 
 .choicesPanel{
-	//border:1px solid #3399CC;
-	//width:98%;
-	//margin:5px auto auto auto;
 	padding-bottom:5px;
 	background: #486677;
 }
@@ -195,8 +189,17 @@ tr{
 }
 
 .commercialPackageSize{
-	font-size:16px;
+	font-size:18px;
 	position:relative;
 	margin:2%;
+  margin-right:5px;
 	top:3px;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.upperCase{
+  text-transform: uppercase;
 }

@@ -18,9 +18,9 @@ export default class Menu extends React.Component {
     let finalValue = value[4].split("?")
     console.log(finalValue[0])
     this.setState({
-      MenuSummaryBlue:finalValue[0] ==="Summary" || finalValue[0] ==="summary" ? "Orange" : "Blue",//MenuStore.get().MenuSummaryBlue,
-      MenuCabinBlue:finalValue[0] ==="Cabin" || finalValue[0] ==="cabin" ? "Orange" : "Blue",//MenuStore.get().MenuCabinBlue,
-      MenuSystemsBlue:finalValue[0] ==="Systems" || finalValue[0] ==="systems" ? "Orange" : "Blue",// MenuStore.get().MenuSystemsBlue,
+      MenuSummaryBlue:finalValue[0] ==="Summary" || finalValue[0] ==="summary" ? "Orange" : "Blue",
+      MenuCabinBlue:finalValue[0] ==="Cabin" || finalValue[0] ==="cabin" ? "Orange" : "Blue",
+      MenuSystemsBlue:finalValue[0] ==="Systems" || finalValue[0] ==="systems" ? "Orange" : "Blue",
     })
   }
 

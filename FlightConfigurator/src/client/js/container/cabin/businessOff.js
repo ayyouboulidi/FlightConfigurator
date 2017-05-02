@@ -60,7 +60,6 @@ export default class BusinessOff extends React.Component {
       let ClassDivider = ($('#ClassDivider:checked').val() === "yes" ? true : false);
 
       this.state.businessSeats = numberOfBusinessSeats
-      //this.state.seats = 164 - parseInt(numberOfBusinessSeats)
       this.state.OverHeadVideo = numberOfOverHeadVideo
       this.setState(this.state)
       IfeStore.setIfe({avodEco:this.state.avodEco,
@@ -90,41 +89,51 @@ export default class BusinessOff extends React.Component {
               <table className="configTable">
                 <tbody>
                   <tr>
-                    <td style={{textAlign:'center'}}><input type="text" id="numberBusinessSeats" className="input" defaultValue={this.state.businessSeats}/></td>
-                    <td className="tdSolidBorderLeft"><span onClick={() =>{this.setState({description:0})}} className={this.state.description == 0 ? "selectedElement" : ""}>Business seats </span></td>
-                    <td >{formatter(5000)}</td>
+                    <td style={{textAlign:'center'}}><input type="text" id="numberBusinessSeats" onClick={() =>{this.setState({description:0})}}  className="input" defaultValue={this.state.businessSeats}/></td>
+                    <td className="tdSolidBorderLeft">
+                      <span  style={{marginLeft:"39px"}} onClick={() =>{this.setState({description:0})}} className={this.state.description == 0 ? "selectedElement" : ""}>Business seats </span></td>
+                    <td >{formatter(7900)}&emsp; Per unit</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td style={{textAlign:'center'}}><input type="text" className="input" id="OverHeadVideo" defaultValue={this.state.OverHeadVideo}/></td>
-                    <td className="tdSolidBorderLeft"><span onClick={() =>{this.setState({description:3})}} className={this.state.description == 3 ? "selectedElement" : ""}>Overhead video </span> </td>
-                    <td >{formatter(440)}</td>
+                    <td style={{textAlign:'center'}}><input type="text" onClick={() =>{this.setState({description:3})}} className="input" id="OverHeadVideo" defaultValue={this.state.OverHeadVideo}/></td>
+                    <td className="tdSolidBorderLeft">
+                      <img src="img/src/overheadblanc.png" style={{marginRight:"13px"}}/>
+                      <span onClick={() =>{this.setState({description:3})}} className={this.state.description == 3 ? "selectedElement" : ""}>Overhead video </span> </td>
+                    <td >{formatter(9000)}&emsp; Per unit</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td style={{textAlign:'center'}}><input type="checkbox" id="avod" value="yes" defaultChecked={this.state.avod}/></td>
-                    <td className="tdSolidBorderLeft"><label labelFor="avod" onClick={() =>{this.setState({description:1})}}  className={this.state.description == 1 ? "selectedElement" : ""}>AVOD</label></td>
-                    <td >{formatter(12000)}</td>
+                    <td style={{textAlign:'center'}}><input type="checkbox" onClick={() =>{this.setState({description:1})}} id="avod" value="yes" defaultChecked={this.state.avod}/></td>
+                    <td className="tdSolidBorderLeft">
+                      <img src="img/src/avodblanc.png" style={{marginRight:"13px"}}/>
+                      <label labelFor="avod" onClick={() =>{this.setState({description:1})}}  className={this.state.description == 1 ? "selectedElement" : ""}>AVOD</label></td>
+                    <td >{formatter(1200)}&emsp; Per unit</td>
                   </tr>
                   <tr>
-                    <td style={{textAlign:'center'}}><input type="checkbox" id="inSeatAudio" value="yes" defaultChecked={this.state.inSeatAudio}/></td>
-                    <td className="tdSolidBorderLeft"><label labelFor="inSeatAudio" onClick={() =>{this.setState({description:2})}} className={this.state.description == 2 ? "selectedElement" : ""}>In-Seat Audio</label></td>
-                    <td >{formatter(440)}</td>
+                    <td style={{textAlign:'center'}}><input type="checkbox" onClick={() =>{this.setState({description:2})}} id="inSeatAudio" value="yes" defaultChecked={this.state.inSeatAudio}/></td>
+                    <td className="tdSolidBorderLeft">
+                      <img src="img/src/inseataudioblanc.png" style={{marginRight:"13px"}}/>
+                      <label labelFor="inSeatAudio" onClick={() =>{this.setState({description:2})}} className={this.state.description == 2 ? "selectedElement" : ""}>In-Seat Audio</label></td>
+                    <td >{formatter(440)}&emsp; Per unit</td>
                   </tr>
                   <tr>
-                    <td style={{textAlign:'center'}}><input type="checkbox" id="inSeatPower" value="yes" defaultChecked={this.state.inSeatPower}/></td>
-                    <td className="tdSolidBorderLeft"><label labelFor="inSeatPower" onClick={() =>{this.setState({description:4})}} className={this.state.description == 4 ? "selectedElement" : ""}>In-Seat Power</label></td>
-                    <td >{formatter(360)}</td>
+                    <td style={{textAlign:'center'}}><input type="checkbox" onClick={() =>{this.setState({description:4})}} id="inSeatPower" value="yes" defaultChecked={this.state.inSeatPower}/></td>
+                    <td className="tdSolidBorderLeft">
+                      <img src="img/src/inseatpowerblanc.png" style={{marginRight:"13px"}}/>
+                      <label labelFor="inSeatPower" onClick={() =>{this.setState({description:4})}} className={this.state.description == 4 ? "selectedElement" : ""}>In-Seat Power</label></td>
+                    <td >{formatter(360)}&emsp; Per unit</td>
                   </tr>
                   <tr>
-                    <td style={{textAlign:'center'}}><input type="checkbox" id="ClassDivider" value="yes" defaultChecked={this.state.ClassDivider}/></td>
-                    <td className="tdSolidBorderLeft"><label labelFor="ClassDivider" onClick={() =>{this.setState({description:5})}} className={this.state.description == 5 ? "selectedElement" : ""}>Class Divider</label></td>
-                    <td >{formatter(29000)}</td>
+                    <td style={{textAlign:'center'}}><input type="checkbox" onClick={() =>{this.setState({description:22})}} id="ClassDivider" value="yes" defaultChecked={this.state.ClassDivider}/></td>
+                    <td className="tdSolidBorderLeft">
+                      <label labelFor="ClassDivider" style={{marginLeft:"39px"}} onClick={() =>{this.setState({description:22})}} className={this.state.description == 22 ? "selectedElement" : ""}>Class Divider</label></td>
+                    <td ><span style={{marginRight:'72px'}}>{formatter(29000)}</span></td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <button className="btn btn-primary ValidateButton" style={{position:'absolute',float:'right',right:'23px',marginTop:'230px'}} onClick={this.validate.bind(this)}>VALIDATE</button>
+            <button className="btn btn-primary ValidateButton" style={{position:'absolute',float:'right',right:'23px',marginTop:'235px'}} onClick={this.validate.bind(this)}>VALIDATE</button>
             <DescriptionCabin value={this.state.description}/>
           </Collapse>
         )

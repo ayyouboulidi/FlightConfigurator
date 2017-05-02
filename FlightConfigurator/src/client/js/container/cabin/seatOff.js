@@ -91,40 +91,48 @@ export default class SeatOff extends React.Component {
               <tr>
                 <td style={{textAlign:'center'}}><input className="input" type="text" id="numberSeats" defaultValue={this.state.seats}/></td>
                 <td  className="tdSolidBorderLeft">
-                  <span onClick={() =>{this.setState({description:0})}}>Economic seats</span><br></br>
-                  <form id="form">
-                    <input type="radio" name="seats" value="bfe" defaultChecked={true}/> <span onClick={() =>{this.setState({description:19})}} className={this.state.description == 19 ? "selectedElement" : ""}>BFE &emsp;</span>
-                    <input type="radio" name="seats" value="sfe"/> <span onClick={() =>{this.setState({description:6})}} className={this.state.description == 6 ? "selectedElement" : ""}>SFE</span>
+                  <span style={{marginLeft:"39px"}}>Economic seats</span><br></br>
+                  <form  style={{marginLeft:"39px"}} id="form">
+                    <input type="radio" name="seats" onClick={() =>{this.setState({description:19})}} value="bfe" defaultChecked={true}/> <span onClick={() =>{this.setState({description:19})}} style={{marginRight:'10px'}} className={this.state.description == 19 ? "selectedElement" : ""}>BFE</span>
+                    <input type="radio" onClick={() =>{this.setState({description:6})}}  name="seats" value="sfe"/> <span onClick={() =>{this.setState({description:6})}} className={this.state.description == 6 ? "selectedElement" : ""}>SFE</span>
                   </form>
                 </td>
-                <td  >{formatter(2550)}</td>
+                <td  >{formatter(5100)}&emsp; Per unit</td>
                 <td></td>
               </tr>
               <tr>
-                <td style={{textAlign:'center'}}><input className="input" type="text" id="OverHeadVideoEco" defaultValue={this.state.OverHeadVideoEco}/></td>
-                <td className="tdSolidBorderLeft"><span onClick={() =>{this.setState({description:3})}} className={this.state.description == 3 ? "selectedElement" : ""}>Overhead video</span> </td>
-                <td >{formatter(440)}</td>
+                <td style={{textAlign:'center'}}><input className="input" onClick={() =>{this.setState({description:3})}} type="text" id="OverHeadVideoEco" defaultValue={this.state.OverHeadVideoEco}/></td>
+                <td className="tdSolidBorderLeft">
+                  <img src="img/src/overheadblanc.png" style={{marginRight:"13px"}}/>
+                  <span onClick={() =>{this.setState({description:3})}} className={this.state.description == 3 ? "selectedElement" : ""}>Overhead video</span> </td>
+                <td >{formatter(9000)}&emsp; Per unit</td>
                 <td></td>
               </tr>
               <tr>
-                <td style={{textAlign:'center'}}><input type="checkbox" id="avodEco" value="yes" defaultChecked={this.state.avodEco}/></td>
-                <td  className="tdSolidBorderLeft"><label labelFor="avod" onClick={() =>{this.setState({description:1})}} className={this.state.description == 1 ? "selectedElement" : ""}>AVOD</label></td>
-                <td  >{formatter(1200)}</td>
+                <td style={{textAlign:'center'}}><input  onClick={() =>{this.setState({description:1})}} type="checkbox" id="avodEco" value="yes" defaultChecked={this.state.avodEco}/></td>
+                <td  className="tdSolidBorderLeft">
+                  <img src="img/src/avodblanc.png" style={{marginRight:"13px"}}/>
+                  <label labelFor="avod" onClick={() =>{this.setState({description:1})}} className={this.state.description == 1 ? "selectedElement" : ""}>AVOD</label></td>
+                <td  >{formatter(1200)}&emsp; Per unit</td>
               </tr>
               <tr>
-                <td style={{textAlign:'center'}}><input type="checkbox" id="inSeatAudioEco" value="yes" defaultChecked={this.state.inSeatAudioEco}/></td>
-                <td className="tdSolidBorderLeft" ><label labelFor="inSeatAudioEco" onClick={() =>{this.setState({description:2})}} className={this.state.description == 2 ? "selectedElement" : ""}>In-Seat Audio</label></td>
-                <td >{formatter(440)}</td>
+                <td style={{textAlign:'center'}}><input  onClick={() =>{this.setState({description:2})}} type="checkbox" id="inSeatAudioEco" value="yes" defaultChecked={this.state.inSeatAudioEco}/></td>
+                <td className="tdSolidBorderLeft" >
+                  <img src="img/src/inseataudioblanc.png" style={{marginRight:"13px"}}/>
+                  <label labelFor="inSeatAudioEco" onClick={() =>{this.setState({description:2})}} className={this.state.description == 2 ? "selectedElement" : ""}>In-Seat Audio</label></td>
+                <td >{formatter(440)}&emsp; Per unit</td>
               </tr>
               <tr>
-                <td  style={{textAlign:'center'}}><input type="checkbox" id="inSeatPowerEco" value="yes" defaultChecked={this.state.inSeatPowerEco}/></td>
-                <td className="tdSolidBorderLeft"><label labelFor="inSeatPowerEco" onClick={() =>{this.setState({description:4})}} className={this.state.description == 4 ? "selectedElement" : ""}>In-Seat Power</label></td>
-                <td >{formatter(360)}</td>
+                <td  style={{textAlign:'center'}}><input  onClick={() =>{this.setState({description:4})}} type="checkbox" id="inSeatPowerEco" value="yes" defaultChecked={this.state.inSeatPowerEco}/></td>
+                <td className="tdSolidBorderLeft">
+                  <img src="img/src/inseatpowerblanc.png" style={{marginRight:"13px"}}/>
+                  <label labelFor="inSeatPowerEco" onClick={() =>{this.setState({description:4})}} className={this.state.description == 4 ? "selectedElement" : ""}>In-Seat Power</label></td>
+                <td >{formatter(360)}&emsp; Per unit</td>
               </tr>
           </tbody>
         </table>
           </div>
-          <button className="btn btn-primary ValidateButton" style={{position:'absolute',float:'right',right:'23px',marginTop:'230px'}} onClick={this.validate.bind(this)}>VALIDATE</button>
+          <button className="btn btn-primary ValidateButton" style={{position:'absolute',float:'right',right:'23px',marginTop:'235px'}} onClick={this.validate.bind(this)}>VALIDATE</button>
           <DescriptionCabin value={this.state.description}/>
         </Collapse>
     )

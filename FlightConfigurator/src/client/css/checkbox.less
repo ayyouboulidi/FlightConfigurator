@@ -9,7 +9,6 @@ input[type=checkbox]:after {
     content: "";
     position: absolute;
     top: -5px;
-    //right: 3px;
     left:-3px;
     visibility: visible;
     height: 20px;
@@ -27,4 +26,37 @@ input[type=checkbox]:after {
 input[type=checkbox]:checked:after {
     content: "\2714";
     background: #3399CC;
+}
+
+input[type=checkbox][id=runway]:after,
+input[type=checkbox][id=headUp]:after,
+input[type=checkbox][id=atsaw]:after,
+input[type=checkbox][id=dualAdf]:after,
+input[type=checkbox][id=gls]:after,
+input[type=checkbox][id=fls]:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -3px;
+    visibility: visible;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 4px;
+     background: none;
+    border: 1px solid white;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+input[type=checkbox][id=runway]:checked:after,
+input[type=checkbox][id=headUp]:checked:after,
+input[type=checkbox][id=atsaw]:checked:after,
+input[type=checkbox][id=dualAdf]:checked:after,
+input[type=checkbox][id=gls]:checked:after,
+input[type=checkbox][id=fls]:checked:after {
+    content: "\2714";
+    background: none;
 }

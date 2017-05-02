@@ -33,15 +33,7 @@ export default class Selector extends React.Component {
     return (
       <span className="aircraftselector">
       <div style={{marginLeft:'1%',marginRight:'1%'}}>
-        <div className="aircraft320330">
-          <img src="img/A320.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A320" ? "aircraftImagesSelected" : "aircraftImages" }/>
-          <img src="img/A330.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A330" ? "aircraftImagesSelected" : "aircraftImages" }/>
-        </div>
-          {/*<img src="img/A340.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A340" ? "aircraftImagesSelected" : "aircraftImages" }/>*/}
-        <div className="aircraft350380">
-          <img src="img/A350.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A350" ? "aircraftImagesSelected" : "aircraftImages" }/>
-          <img src="img/A380.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A380" ? "aircraftImagesSelected" : "aircraftImages" }/>
-        </div>
+      <img src="img/A320.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A320" ? "aircraftImagesSelected" : "aircraftImages hover08" }/>
       </div>
       <Link to={this.state.gotoPage} className="btn btn-primary ValidateButton ValidateButton__marginAll" onMouseOver={this.go.bind(this)}>Start Configuration</Link>
       </span>

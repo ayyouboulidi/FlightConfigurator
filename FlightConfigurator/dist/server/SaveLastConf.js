@@ -3,19 +3,6 @@ var PDFDocument = require('pdfkit')
 var fs = require('fs')
 
 module.exports = function(app, projectDir) {
-/*  app.use('/pdf', function(req, res){
-    fs.readFile(projectDir+'/output.pdf')
-          res.pdfFromHTML({
-              filename: 'generated.pdf',
-              //htmlContent: '<html><body>'+obj.lastConfig.conf[0].name+'</body></html>',
-              htmlContent: '<html><body><div><img src="public/img/out.png"/></div><div><img src="img/out.png"/></div>blll</body></html>',
-              //options: {...}
-          });
-  });*/
-
-
-
-
     app.post('/savelastconfig', function(req, res) {
       //save the pdfkit
 
@@ -63,20 +50,6 @@ module.exports = function(app, projectDir) {
           return doc.text(object[val].nameComponent+"              "+object[val].price)
         })
       })
-
-    /*  doc.text('Cabin', 100, 300)
-         .font('Times-Roman', 13)
-         .moveDown()
-         .text(req.body.lastConfig.conf[0].components)
-      /*   .text(req.body.lastConfig.conf[0].name, {
-           width: 412,
-           align: 'justify',
-           indent: 30,
-           columns: 5,
-           height: 300,
-           ellipsis: true
-         });*/
-
 
       doc.end(); //we end the document writing.*/
 

@@ -59,33 +59,33 @@ export default class Lighting extends React.Component {
       <div className="selectConfStyle"><span>SELECT</span></div>
       </div>
       <div className="leftPanel">
-      <table className="configTable">
+      <table className="configTable" style={{width:'340px'}}>
       <tbody>
       <tr>
       <td><input type="checkbox" id="defaultLight" value="yes" defaultChecked={this.state.defaultLight}/></td>
-      <td className="tdSolidBorderLeft"><label labelFor="defaultLight">Default</label></td>
+      <td className="tdSolidBorderLeft"><label labelFor="defaultLight"  style={{marginLeft:"36px"}}>Default</label></td>
       <td>{formatter(0)}</td>
       </tr>
       <tr>
-      <td><input type="checkbox" id="moodlighting" value="yes" defaultChecked={this.state.moodlighting}/></td>
+      <td><input type="checkbox" id="moodlighting" onClick={() =>{this.setState({description:16})}} value="yes" defaultChecked={this.state.moodlighting}/></td>
       <td className="tdSolidBorderLeft">
-      <img src="img/src/moodLightning.png"/>
+      <img src="img/src/moodblanc.png" style={{marginRight:"10px"}}/>
       <label labelFor="moodlighting" onClick={() =>{this.setState({description:16})}} className={this.state.description == 16 ? "selectedElement" : ""}>Mood-Lighting</label>
       </td>
       <td>{formatter(74100)}</td>
       </tr>
       <tr>
-      <td><input type="checkbox" id="floormounted" value="yes" defaultChecked={this.state.floormounted}/></td>
+      <td><input type="checkbox" id="floormounted" onClick={() =>{this.setState({description:17})}} value="yes" defaultChecked={this.state.floormounted}/></td>
       <td className="tdSolidBorderLeft">
-      <img src="img/src/floorMointed.png"/>
+      <img src="img/src/FLOOR-MOUNTEDBLANC.png" style={{marginRight:"10px"}}/>
       <label labelFor="floormounted" onClick={() =>{this.setState({description:17})}} className={this.state.description == 17 ? "selectedElement" : ""}>Floor mounted EEPMS</label>
       </td>
       <td>{formatter(19300)}</td>
       </tr>
       <tr>
-      <td><input type="checkbox" id="ohscHandrail" value="yes" defaultChecked={this.state.ohscHandrail}/></td>
+      <td><input type="checkbox" id="ohscHandrail" onClick={() =>{this.setState({description:18})}} value="yes" defaultChecked={this.state.ohscHandrail}/></td>
       <td className="tdSolidBorderLeft">
-      <img src="img/src/handrailLightning.png"/>
+      <img src="img/src/HANDRAIBLANC.png" style={{marginRight:"10px"}}/>
       <label labelFor="ohscHandrail" onClick={() =>{this.setState({description:18})}} className={this.state.description == 18 ? "selectedElement" : ""}>OHSC Handrail</label>
       </td>
       <td>{formatter(88500)}</td>
@@ -93,7 +93,7 @@ export default class Lighting extends React.Component {
       </tbody>
       </table>
       </div>
-      <button className="btn btn-primary ValidateButton" style={{position:'absolute',float:'right',right:'23px',marginTop:'230px'}} onClick={this.validate.bind(this)}>VALIDATE</button>
+      <button className="btn btn-primary ValidateButton" style={{position:'absolute',float:'right',right:'23px',marginTop:'235px'}} onClick={this.validate.bind(this)}>VALIDATE</button>
       <DescriptionCabin value={this.state.description}/>
       </Collapse>
     )

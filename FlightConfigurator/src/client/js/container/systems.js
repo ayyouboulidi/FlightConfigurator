@@ -23,9 +23,6 @@ export default class Systems extends React.Component {
     }
   }
 
-/*  switchFace(){
-    this.setState({isFlipped:!this.state.isFlipped})
-  }*/
 
   componentWillMount() {
 
@@ -42,21 +39,7 @@ export default class Systems extends React.Component {
   componentDidMount(){
     this.state.flyingtoolsPrice = PriceSystemStore.get()
     this.state.session = SessionStore.get();
-  /*  if(this.state.session === "airlines"){
-      this.getLastOwnConfig(function success(data){
-        systemStore.setSystem(
-          {
-            runway:data.lastConfig.conf[0].system.flyingTools.runway != undefined ? true : false,
-            onboard:data.lastConfig.conf[0].system.flyingTools.onboard != undefined ? true : false,
-            navigation:data.lastConfig.conf[0].system.flyingTools.navigation != undefined ? true : false,
-            headUp:data.lastConfig.conf[0].system.flyingTools.headUp != undefined ? true : false,
-            atsaw:data.lastConfig.conf[0].system.flyingTools.atsaw != undefined ? true : false,
-            dualAdf:data.lastConfig.conf[0].system.flyingTools.dualAdf != undefined ? true : false,
-            gls:data.lastConfig.conf[0].system.flyingTools.gls != undefined ? true : false,
-            fls:data.lastConfig.conf[0].system.flyingTools.fls != undefined ? true : false})
-          }
-        )
-    }*/
+    this.setState(this.state)
   }
 
   getLastOwnConfig(success) {
@@ -76,13 +59,11 @@ export default class Systems extends React.Component {
           <GlobalPrice/>
           <Menu/>
             <Accor eventKey="Flying" title="Flying Tools (ATA 22,31,34)" price={this.state.flyingtoolsPrice}>
-              <Market/>
-              {/*<Market src="img/OANS.jpg" name="onboard" title="Onboard Airport Navigation System " price="488000"/>
-              <Market src="img/RNP.jpg" name="navigation" title="Required Navigation Performance" price="100000"/>
-              <Market src="img/Dual Huds.jpg" name="headUp" title="Dual Head-Up Display" price="55400"/>*/}
+              <div style={{width:'80%',margin:'auto'}}>
+              <Market name="runway" text="ROPS" src="img/ROPS.jpg" popup="true" title="ROPS mitigates N°1 source of insurance claims" price="80,000"/>
+              <Market name="headUp" text="Dual Head-Up" src="img/Dual Huds.jpg" popup="false" title="CAAC issued a mandate making HUD required for Chinese registered airlines" price="488,000"/></div>
               <Table/>
-              {/*<span onClick={() => this.refs.add.show()}><img src="img/plus.png" style={{cursor:'not-allowed'}}/>add new item</span>*/}
-              <span ><img src="img/plus.png" style={{cursor:'not-allowed'}}/>add new item</span>
+              <div style={{margin:'5px'}}><img src="img/plus.png" style={{cursor:'not-allowed'}}/>add new item</div>
             </Accor>
             <Accor eventKey="Specific" title="Specific Operations (ATA 02,21)" price="0">
             </Accor>

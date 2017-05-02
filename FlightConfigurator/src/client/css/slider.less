@@ -1,0 +1,264 @@
+#slider {
+    display: block;
+    height: 350px;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#slider #slides {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top:-5px;
+}
+
+#slider #slides > div {
+    list-style: none;
+    height: 100%;
+    width: 500%;
+    position: relative;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Set 3D perspective since we're using 3D transforms */
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+    -webkit-perspective-origin: 10% 50%;
+    -moz-perspective-origin: 10% 50%;
+    perspective-origin: 10% 50%;
+}
+
+#slides > div > span {
+	/* Run the tranistions */
+	-webkit-transition: all 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+	-moz-transition: all 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+	-o-transition: all 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+	transition: all 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+	height: 320px;
+	width: 10%;
+	float: left;
+	border-radius: 5px;
+	opacity: 1;
+	overflow: hidden;
+	display: block;
+	position: relative;
+	font-size: 1.6em;
+	top: 20px;
+	z-index: 1;
+}
+
+/* Display none, so the user doesn't see whats happening with the radio buttons */
+#slider input[type=radio] {
+	display: none;
+}
+
+#slider #slides > div > span > img {
+    margin: auto;
+    height: 100%;
+}
+
+/* Style the arrows so they look nice! */
+#slider .arrows {
+    position: absolute;
+    top: 290px;
+    display: none;
+    z-index: 9999;
+}
+
+#slider .description {
+    color:white;
+    position:absolute;
+    top: 90px;
+    left:10px;
+    z-index: 9999;
+    width: 300px;
+    font-size:16px;
+    padding:10px;
+    background: rgba(77, 142, 180, 0.6);
+}
+
+#slider .warning {
+    color:white;
+    position:absolute;
+    top: 90px;
+    left:10px;
+    z-index: 9999;
+    width: 300px;
+  	text-align: center;
+    background: rgba(77, 142, 180, 0.6);
+}
+
+
+#slider .arrows:hover {
+}
+
+/* The info boxes */
+#slides .info {
+	width: 100%;
+	padding: 20px 20px 25px 20px;
+	position: relative;
+	bottom: 120px;
+	border-radius: 5px 5px 0 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	display: block;
+	-webkit-transition: all 1s 0.2s cubic-bezier(1, 0, 0.6, 1);
+	transition: all 1s 0.2s cubic-bezier(1, 0, 0.6, 1);
+	color: #fff;
+	font-weight: bold;
+	background-color: rgba(30, 30, 30,0.6);
+	box-shadow: 0 0 20px rgba(0,0,0,0.3);
+	line-height: 30px;
+}
+
+#slides .info strong {
+	padding: 3px 0;
+}
+
+#slides .info em {
+	font-size: 0.8em;
+	float: right;
+	padding-top: 4px;
+	color: rgba(255,255,255,0.6);
+}
+
+/* This is for positioning the arrows */
+#button-1:checked ~ #arrow-2,#button-1bis:checked ~ #arrow-2, #button-2:checked ~ #arrow-3, #button-3:checked ~ #arrow-4, #button-3:checked ~ #arrow-4bis, #button-4:checked ~ #arrow-5, #button-4bis:checked ~ #arrow-5, #button-4:checked ~ #arrow-6, #button-4bis:checked ~ #arrow-6 {
+    right: 27%;
+    display: block;
+}
+
+/* Since there is no previous sibling selector in CSS, we have to select the correct arrow, reposition it and rotate it 180deg so it appears as though it's a back arrow */
+#button-2:checked ~ #arrow-1,#button-2:checked ~ #arrow-1bis, #button-3:checked ~ #arrow-2, #button-4:checked ~ #arrow-3, #button-4bis:checked ~ #arrow-3, #button-5:checked ~ #arrow-4, #button-5:checked ~ #arrow-4bis,#button-6:checked ~ #arrow-4,#button-6:checked ~ #arrow-4bis {
+	left: 27%;
+    display: block;
+    -webkit-transform: rotateZ(180deg);
+    -o-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+#button-2:checked ~ #arrow-1:hover, #button-3:checked ~ #arrow-2:hover, #button-4:checked ~ #arrow-3:hover, #button-5:checked ~ #arrow-4:hover {
+}
+
+/* The images used in the slides, feel free to change this */
+#image-1 {
+	background: url('../img/1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#image-1bis {
+	background: url('../img/1bis.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#image-2 {
+	background: url('../img/2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#image-3 {
+	background: url('../img/3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#image-4 {
+	background: url('../img/4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#image-4bis {
+	background: url('../img/4bis.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#image-5 {
+	background: url('../img/5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#image-6 {
+	background: url('../img/6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* The next bit is a bit wordy, but it just positions the slides at either side of the selected slide
+   so we get a cool 3D effect */
+#slider #button-1:checked ~ #slides > div #image-2, #slider #button-1:checked ~ #slides > div #image-3,
+#slider #button-1bis:checked ~ #slides > div #image-2, #slider #button-1bis:checked ~ #slides > div #image-3,
+#slider #button-1:checked ~ #slides > div #image-4, #slider #button-1:checked ~ #slides > div #image-5,
+#slider #button-1bis:checked ~ #slides > div #image-4, #slider #button-1bis:checked ~ #slides > div #image-5,
+#slider #button-2:checked ~ #slides > div #image-3, #slider #button-2:checked ~ #slides > div #image-4,
+#slider #button-2:checked ~ #slides > div #image-3, #slider #button-2:checked ~ #slides > div #image-4bis,
+#slider #button-2:checked ~ #slides > div #image-5, #slider #button-3:checked ~ #slides > div #image-4,
+#slider #button-2:checked ~ #slides > div #image-5, #slider #button-3:checked ~ #slides > div #image-4bis,
+#slider #button-3:checked ~ #slides > div #image-5, #slider #button-4:checked ~ #slides > div #image-5,
+#slider #button-3:checked ~ #slides > div #image-5, #slider #button-4bis:checked ~ #slides > div #image-5,
+#slider #button-3:checked ~ #slides > div #image-6, #slider #button-4:checked ~ #slides > div #image-6,
+#slider #button-3:checked ~ #slides > div #image-6, #slider #button-4bis:checked ~ #slides > div #image-6 {
+	-webkit-transform: rotateY(-10deg) scale(0.8) translateX(-10%);
+	transform: rotateY(-10deg) scale(0.8) translateX(-10%);
+	z-index: 0;
+}
+
+#slider #button-2:checked ~ #slides > div #image-1, #slider #button-3:checked ~ #slides > div #image-2,
+#slider #button-2:checked ~ #slides > div #image-1bis, #slider #button-3:checked ~ #slides > div #image-2,
+#slider #button-3:checked ~ #slides > div #image-1, #slider #button-4:checked ~ #slides > div #image-3,
+#slider #button-3:checked ~ #slides > div #image-1bis, #slider #button-4bis:checked ~ #slides > div #image-3,
+#slider #button-4:checked ~ #slides > div #image-2, #slider #button-4:checked ~ #slides > div #image-1,
+#slider #button-4bis:checked ~ #slides > div #image-2, #slider #button-4bis:checked ~ #slides > div #image-1,
+#slider #button-5:checked ~ #slides > div #image-4, #slider #button-5:checked ~ #slides > div #image-3,
+#slider #button-6:checked ~ #slides > div #image-4bis, #slider #button-6:checked ~ #slides > div #image-3,
+#slider #button-6:checked ~ #slides > div #image-4, #slider #button-6:checked ~ #slides > div #image-3,
+#slider #button-5:checked ~ #slides > div #image-4bis, #slider #button-5:checked ~ #slides > div #image-3,
+#slider #button-5:checked ~ #slides > div #image-2, #slider #button-5:checked ~ #slides > div #image-1,
+#slider #button-6:checked ~ #slides > div #image-2, #slider #button-6:checked ~ #slides > div #image-1 {
+	-webkit-transform: rotateY(10deg) scale(0.8) translateX(10%);
+	transform: rotateY(10deg) scale(0.8) translateX(10%);
+	z-index: 0;
+}
+
+/* Show the info box when the user selects the slides */
+#slider #button-1:checked ~ #slides > div #image-1 .info,
+#slider #button-1bis:checked ~ #slides > div #image-1bis .info,
+#slider #button-2:checked ~ #slides > div #image-2 .info,
+#slider #button-3:checked ~ #slides > div #image-3 .info,
+#slider #button-4:checked ~ #slides > div #image-4 .info,
+#slider #button-4bis:checked ~ #slides > div #image-4bis .info,
+#slider #button-5:checked ~ #slides > div #image-5 .info,
+#slider #button-6:checked ~ #slides > div #image-6 .info {
+	bottom: 0px;
+}
+
+/* .. and finally, move the slides into the correct position when the user clicks the arrow, so the right
+   slide is selected */
+
+   #slider #button-1:checked ~ #slides > div > span { left: 5% }
+
+#slider #button-1bis:checked ~ #slides > div > span { left: 5% }
+
+#slider #button-2:checked ~ #slides > div > span { left: -5% }
+
+#slider #button-3:checked ~ #slides > div > span { left: -15% }
+
+#slider #button-4:checked ~ #slides > div > span { left: -25% }
+
+#slider #button-4bis:checked ~ #slides > div > span { left: -25% }
+
+#slider #button-5:checked ~ #slides > div > span { left: -35% }
+
+#slider #button-6:checked ~ #slides > div > span { left: -35% }

@@ -84,15 +84,7 @@ export default class Selector extends React.Component {
           </div>
         <hr style={{margin:'10px',borderTop:'1px solid white'}}></hr>
         <div style={{margin:'auto'}}>
-          <div className="aircraft320330">
-            <img src="img/A320.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A320" ? "aircraftImagesSelected hover08" : "aircraftImages hover08" }/>
-            <img src="img/A330.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A330" ? "aircraftImagesSelected hover08" : "aircraftImages hover08" }/>
-          </div>
-            {/*<img src="img/A340.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A340" ? "aircraftImagesSelected" : "aircraftImages" }/>*/}
-          <div className="aircraft350380">
-            <img src="img/A350.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A350" ? "aircraftImagesSelected hover08" : "aircraftImages hover08" }/>
-            <img src="img/A380.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A380" ? "aircraftImagesSelected hover08" : "aircraftImages hover08" }/>
-          </div>
+        <img src="img/A320.png" onClick={this.setAircraft.bind(this)} className={this.state.selectedAircraft == "A320" ? "aircraftImagesSelected " : "aircraftImages hover08" }/>
         </div>
         <Link to={this.state.gotoPage} className="btn btn-primary ValidateButton ValidateButton__marginAll" onMouseOver={this.go.bind(this)}>Start Configuration</Link>
       </div>

@@ -36,7 +36,7 @@
   text-align: center;
   position: absolute;
   top: 20%;
-  right: 14%;
+  right: 9.5%;
 }
 table {
   width: auto;
@@ -61,6 +61,7 @@ table {
   width: 48%;
   height: 350px;
   padding: 2%;
+  padding-left: 1%;
   background: #1B96D1;
   color: white;
 }
@@ -76,6 +77,14 @@ table {
   margin: 1%;
   width: 48%;
   height: 300px;
+  float: left;
+  background: #C2C2C2;
+  color: black;
+}
+.newsPanelCTAirlines {
+  position: relative;
+  margin: 1%;
+  width: 98%;
   float: left;
   background: #C2C2C2;
   color: black;
@@ -98,8 +107,13 @@ table {
 .newsFeedInlineCT {
   display: inline-block;
   margin: 1%;
+  margin-top: 7%;
   vertical-align: middle;
-  width: 44%;
+  width: 58%;
+}
+.textNews {
+  float: right;
+  width: 38%;
 }
 .menu {
   padding-left: 0%;
@@ -118,13 +132,12 @@ table {
 }
 .priceback {
   color: #002059;
-  font-size: 20px;
-  text-align: center;
+  text-align: right;
   font-size: 18px;
 }
 .globalprice {
   position: absolute;
-  right: 2px;
+  right: 14px;
   font-size: 18px;
   text-align: center;
 }
@@ -132,25 +145,37 @@ table {
   color: white;
   padding: 18px;
   font-size: 18px;
+  padding-bottom: 6px !important;
+  padding-right: 0px;
+  width: 300px;
+  border-bottom: 5px solid white;
+  text-align: right;
 }
 .popoverElements {
   border-bottom: 1px solid #E42424;
 }
 .rightNewConfig {
   float: right;
-  width: 80%;
+  width: 75%;
   display: inline-block;
-  padding: 5px;
+  padding: 10px;
+  padding-bottom: 0px;
   border-left: 1px solid white;
 }
+.aircraft320330 {
+  margin-left: 5%;
+}
+.aircraft350380 {
+  margin-left: 18%;
+}
 .aircraftImages {
-  width: 21%;
+  width: 31%;
   margin: 2%;
 }
 .aircraftImagesSelected {
-  width: 21%;
-  border: solid 1px white;
-  margin: 2%;
+  width: 51%;
+  margin: auto;
+  display: block;
 }
 .companyImages {
   width: 10%;
@@ -158,11 +183,9 @@ table {
 }
 .companyImagesSelected {
   width: 10%;
-  border: solid 1px black;
+  border-bottom: solid 1px white;
   margin: 1%;
-}
-.NewsImages {
-  width: 60%;
+  padding-bottom: 5px;
 }
 .imageConfDesc {
   width: 225px;
@@ -184,11 +207,12 @@ table {
 .imagewrap {
   display: inline-block;
   position: relative;
-  width: 100%;
+  width: 49%;
+  margin: 0.5%;
 }
 .buttonI {
   position: absolute;
-  bottom: 3px;
+  bottom: 0px;
   right: 3px;
 }
 .priceDollars {
@@ -199,25 +223,47 @@ table {
 .pricecontent {
   position: absolute;
   top: 35px;
-  right: 10px;
+  right: 13px;
   z-index: 10;
 }
 .buttonYes {
   position: absolute;
-  top: 5%;
-  left: 0;
+  font-size: 20px;
+  top: 25%;
+  left: 1%;
+  width: 60%;
+  background: rgba(77, 142, 180, 0.7);
+  padding: 10px;
+  padding-left: 5px;
 }
-.PanelCustomer {
+.PanelCustomerHead {
+  position: absolute;
+  top: 0;
+  background: #FF910A;
+  width: 100%;
+  height: 10%;
+}
+.PanelCustomerfooter {
   position: absolute;
   bottom: 0;
   background: #333333;
   opacity: 0.8;
   width: 100%;
   height: 10%;
+  text-align: right;
 }
 .panel-default > .panel-heading {
-  background-color: #486677;
+  background-color: #4D8EB4;
   color: white;
+}
+.panel-default {
+  border-color: rgba(111, 111, 111, 0);
+}
+.panel-heading {
+  padding: 10px 0px 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .panel-group .panel {
   margin-bottom: 0;
@@ -226,8 +272,8 @@ table {
 }
 .CloseButton {
   position: absolute;
-  top: 3%;
-  right: 3%;
+  right: 1%;
+  top: 5%;
   cursor: pointer;
 }
 .seatsInput {
@@ -241,10 +287,21 @@ table {
   text-align: center;
   background-image: url("../img/fondBleu.png");
 }
+.seatsInput_total {
+  position: absolute;
+  z-index: 10;
+  color: white;
+  border: none;
+  background: none;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
 .ValidateButton {
   float: right;
   background: #497C9B;
   color: white;
+  border-radius: 0;
 }
 .ValidateButton__margin {
   margin-left: 10px;
@@ -327,6 +384,38 @@ input[type=checkbox]:after {
 input[type=checkbox]:checked:after {
   content: "\2714";
   background: #3399CC;
+}
+input[type=checkbox][id=runway]:after,
+input[type=checkbox][id=headUp]:after,
+input[type=checkbox][id=atsaw]:after,
+input[type=checkbox][id=dualAdf]:after,
+input[type=checkbox][id=gls]:after,
+input[type=checkbox][id=fls]:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  visibility: visible;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+  border-radius: 4px;
+  background: none;
+  border: 1px solid white;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+input[type=checkbox][id=runway]:checked:after,
+input[type=checkbox][id=headUp]:checked:after,
+input[type=checkbox][id=atsaw]:checked:after,
+input[type=checkbox][id=dualAdf]:checked:after,
+input[type=checkbox][id=gls]:checked:after,
+input[type=checkbox][id=fls]:checked:after {
+  content: "\2714";
+  background: none;
 }
 #dock img {
   width: 64px;
@@ -443,6 +532,293 @@ input[type=checkbox]:checked:after {
     opacity: 1;
   }
 }
+#slider {
+  display: block;
+  height: 350px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+#slider #slides {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: -5px;
+}
+#slider #slides > div {
+  list-style: none;
+  height: 100%;
+  width: 500%;
+  position: relative;
+  left: 0px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Set 3D perspective since we're using 3D transforms */
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px;
+  -webkit-perspective-origin: 10% 50%;
+  -moz-perspective-origin: 10% 50%;
+  perspective-origin: 10% 50%;
+}
+#slides > div > span {
+  /* Run the tranistions */
+  -webkit-transition: all 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  -moz-transition: all 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  -o-transition: all 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: all 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  height: 320px;
+  width: 10%;
+  float: left;
+  border-radius: 5px;
+  opacity: 1;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  font-size: 1.6em;
+  top: 20px;
+  z-index: 1;
+}
+/* Display none, so the user doesn't see whats happening with the radio buttons */
+#slider input[type=radio] {
+  display: none;
+}
+#slider #slides > div > span > img {
+  margin: auto;
+  height: 100%;
+}
+/* Style the arrows so they look nice! */
+#slider .arrows {
+  position: absolute;
+  top: 290px;
+  display: none;
+  z-index: 9999;
+  /*  width: 29px;
+	height: 25px;
+	border-radius: 32px;
+	text-align: center;
+	padding: 3px 0 0 0px;
+    background: black;
+    box-shadow: 0 0 20px rgba(200, 235, 248, 0.98), inset 0px 11px 24px -8px rgba(255,255,255,0.4);*/
+}
+#slider .description {
+  color: white;
+  position: absolute;
+  top: 90px;
+  left: 10px;
+  z-index: 9999;
+  width: 300px;
+  font-size: 16px;
+  padding: 10px;
+  background: rgba(77, 142, 180, 0.6);
+}
+#slider .warning {
+  color: white;
+  position: absolute;
+  top: 90px;
+  left: 10px;
+  z-index: 9999;
+  width: 300px;
+  text-align: center;
+  background: rgba(77, 142, 180, 0.6);
+}
+/* The info boxes */
+#slides .info {
+  width: 100%;
+  padding: 20px 20px 25px 20px;
+  position: relative;
+  bottom: 120px;
+  border-radius: 5px 5px 0 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  display: block;
+  -webkit-transition: all 1s 0.2s cubic-bezier(1, 0, 0.6, 1);
+  transition: all 1s 0.2s cubic-bezier(1, 0, 0.6, 1);
+  color: #fff;
+  font-weight: bold;
+  background-color: rgba(30, 30, 30, 0.6);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  line-height: 30px;
+}
+#slides .info strong {
+  padding: 3px 0;
+}
+#slides .info em {
+  font-size: 0.8em;
+  float: right;
+  padding-top: 4px;
+  color: rgba(255, 255, 255, 0.6);
+}
+/* This is for positioning the arrows */
+#button-1:checked ~ #arrow-2,
+#button-1bis:checked ~ #arrow-2,
+#button-2:checked ~ #arrow-3,
+#button-3:checked ~ #arrow-4,
+#button-3:checked ~ #arrow-4bis,
+#button-4:checked ~ #arrow-5,
+#button-4bis:checked ~ #arrow-5,
+#button-4:checked ~ #arrow-6,
+#button-4bis:checked ~ #arrow-6 {
+  right: 27%;
+  display: block;
+}
+/* Since there is no previous sibling selector in CSS, we have to select the correct arrow, reposition it and rotate it 180deg so it appears as though it's a back arrow */
+#button-2:checked ~ #arrow-1,
+#button-2:checked ~ #arrow-1bis,
+#button-3:checked ~ #arrow-2,
+#button-4:checked ~ #arrow-3,
+#button-4bis:checked ~ #arrow-3,
+#button-5:checked ~ #arrow-4,
+#button-5:checked ~ #arrow-4bis,
+#button-6:checked ~ #arrow-4,
+#button-6:checked ~ #arrow-4bis {
+  left: 27%;
+  display: block;
+  -webkit-transform: rotateZ(180deg);
+  -o-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+}
+/* The images used in the slides, feel free to change this */
+#image-1 {
+  background: url('../img/1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#image-1bis {
+  background: url('../img/1bis.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#image-2 {
+  background: url('../img/2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#image-3 {
+  background: url('../img/3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#image-4 {
+  background: url('../img/4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#image-4bis {
+  background: url('../img/4bis.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#image-5 {
+  background: url('../img/5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#image-6 {
+  background: url('../img/6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* The next bit is a bit wordy, but it just positions the slides at either side of the selected slide
+   so we get a cool 3D effect */
+#slider #button-1:checked ~ #slides > div #image-2,
+#slider #button-1:checked ~ #slides > div #image-3,
+#slider #button-1bis:checked ~ #slides > div #image-2,
+#slider #button-1bis:checked ~ #slides > div #image-3,
+#slider #button-1:checked ~ #slides > div #image-4,
+#slider #button-1:checked ~ #slides > div #image-5,
+#slider #button-1bis:checked ~ #slides > div #image-4,
+#slider #button-1bis:checked ~ #slides > div #image-5,
+#slider #button-2:checked ~ #slides > div #image-3,
+#slider #button-2:checked ~ #slides > div #image-4,
+#slider #button-2:checked ~ #slides > div #image-3,
+#slider #button-2:checked ~ #slides > div #image-4bis,
+#slider #button-2:checked ~ #slides > div #image-5,
+#slider #button-3:checked ~ #slides > div #image-4,
+#slider #button-2:checked ~ #slides > div #image-5,
+#slider #button-3:checked ~ #slides > div #image-4bis,
+#slider #button-3:checked ~ #slides > div #image-5,
+#slider #button-4:checked ~ #slides > div #image-5,
+#slider #button-3:checked ~ #slides > div #image-5,
+#slider #button-4bis:checked ~ #slides > div #image-5,
+#slider #button-3:checked ~ #slides > div #image-6,
+#slider #button-4:checked ~ #slides > div #image-6,
+#slider #button-3:checked ~ #slides > div #image-6,
+#slider #button-4bis:checked ~ #slides > div #image-6 {
+  -webkit-transform: rotateY(-10deg) scale(0.8) translateX(-10%);
+  transform: rotateY(-10deg) scale(0.8) translateX(-10%);
+  z-index: 0;
+}
+#slider #button-2:checked ~ #slides > div #image-1,
+#slider #button-3:checked ~ #slides > div #image-2,
+#slider #button-2:checked ~ #slides > div #image-1bis,
+#slider #button-3:checked ~ #slides > div #image-2,
+#slider #button-3:checked ~ #slides > div #image-1,
+#slider #button-4:checked ~ #slides > div #image-3,
+#slider #button-3:checked ~ #slides > div #image-1bis,
+#slider #button-4bis:checked ~ #slides > div #image-3,
+#slider #button-4:checked ~ #slides > div #image-2,
+#slider #button-4:checked ~ #slides > div #image-1,
+#slider #button-4bis:checked ~ #slides > div #image-2,
+#slider #button-4bis:checked ~ #slides > div #image-1,
+#slider #button-5:checked ~ #slides > div #image-4,
+#slider #button-5:checked ~ #slides > div #image-3,
+#slider #button-6:checked ~ #slides > div #image-4bis,
+#slider #button-6:checked ~ #slides > div #image-3,
+#slider #button-6:checked ~ #slides > div #image-4,
+#slider #button-6:checked ~ #slides > div #image-3,
+#slider #button-5:checked ~ #slides > div #image-4bis,
+#slider #button-5:checked ~ #slides > div #image-3,
+#slider #button-5:checked ~ #slides > div #image-2,
+#slider #button-5:checked ~ #slides > div #image-1,
+#slider #button-6:checked ~ #slides > div #image-2,
+#slider #button-6:checked ~ #slides > div #image-1 {
+  -webkit-transform: rotateY(10deg) scale(0.8) translateX(10%);
+  transform: rotateY(10deg) scale(0.8) translateX(10%);
+  z-index: 0;
+}
+/* Show the info box when the user selects the slides */
+#slider #button-1:checked ~ #slides > div #image-1 .info,
+#slider #button-1bis:checked ~ #slides > div #image-1bis .info,
+#slider #button-2:checked ~ #slides > div #image-2 .info,
+#slider #button-3:checked ~ #slides > div #image-3 .info,
+#slider #button-4:checked ~ #slides > div #image-4 .info,
+#slider #button-4bis:checked ~ #slides > div #image-4bis .info,
+#slider #button-5:checked ~ #slides > div #image-5 .info,
+#slider #button-6:checked ~ #slides > div #image-6 .info {
+  bottom: 0px;
+}
+/* .. and finally, move the slides into the correct position when the user clicks the arrow, so the right
+   slide is selected */
+#slider #button-1:checked ~ #slides > div > span {
+  left: 5%;
+}
+#slider #button-1bis:checked ~ #slides > div > span {
+  left: 5%;
+}
+#slider #button-2:checked ~ #slides > div > span {
+  left: -5%;
+}
+#slider #button-3:checked ~ #slides > div > span {
+  left: -15%;
+}
+#slider #button-4:checked ~ #slides > div > span {
+  left: -25%;
+}
+#slider #button-4bis:checked ~ #slides > div > span {
+  left: -25%;
+}
+#slider #button-5:checked ~ #slides > div > span {
+  left: -35%;
+}
+#slider #button-6:checked ~ #slides > div > span {
+  left: -35%;
+}
 @font-face {
   font-family: HelveticaNeue;
   src: url("../fonts/HelveticaNeueLTStd Lt.otf");
@@ -451,17 +827,23 @@ html,
 body,
 #wrapper,
 #page-content-wrapper {
-  height: 100%;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  background: #333333;
   color: white;
   font-family: "HelveticaNeue";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  background-image: url('../img/src/AvionsBG.png');
 }
 hr {
   margin: 0;
   border-top: 1px solid white;
+}
+.h4Title {
+  font-size: 18px;
+  margin: 0;
+  padding: 10px;
+  background-color: #FF910A;
 }
 .commercialSelect {
   border: 1px solid #ccc;
@@ -505,10 +887,10 @@ label {
 }
 .NameConfig {
   background: #497C9B;
-  width: 260px;
-  border-radius: 4px;
+  width: 240px;
   border-color: white;
   color: white;
+  border: 1px solid;
 }
 .logo {
   border-bottom: 1px solid #FFFFFF;
@@ -523,18 +905,18 @@ label {
   background-repeat: no-repeat;
 }
 .inputLogin {
-  border-radius: 5px;
-  border-color: #537DA5;
-  background-color: #537DA5;
+  border: 1px solid white;
+  background-color: white;
   margin: 3px;
-  color: white;
+  color: black;
+  width: 300px;
 }
 .inputPassword {
-  border-radius: 5px;
-  border-color: #537DA5;
-  background-color: #537DA5;
+  border: 1px solid white;
+  background-color: white;
   margin: 3px;
-  color: white;
+  color: black;
+  width: 300px;
 }
 .popover {
   position: absolute;
@@ -607,8 +989,14 @@ tr {
   margin: 1%;
 }
 .commercialPackageSize {
-  font-size: 16px;
+  font-size: 18px;
   position: relative;
   margin: 2%;
   top: 3px;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.upperCase {
+  text-transform: uppercase;
 }

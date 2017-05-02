@@ -158,8 +158,8 @@ export default class CabinAircraft extends React.Component {
                        BusinessSeat:data.lastConfig.conf[0].components.seats.BusinessSeats!= undefined || data.lastConfig.conf[0].components.ife!= undefined ? "On" : "Off",
                        PremiumSeat:data.lastConfig.conf[0].components.seats.PremiumSeats!= undefined || data.lastConfig.conf[0].components.ife!= undefined  ? "On" : "Off",
                        Seat:data.lastConfig.conf[0].components.seats.Seats!= undefined || data.lastConfig.conf[0].components.ife!= undefined  ? "On" : "Off" ,
-                       cafe:data.lastConfig.conf[0].components.cafe != undefined ? "On" : "Off",
-                       Toilets:data.lastConfig.conf[0].components.cafe != undefined ? "On" : "Off",
+                       cafe:data.lastConfig.conf[0].components.cafe != undefined ? "SFOn" : "Off",
+                       Toilets:data.lastConfig.conf[0].components.cafe != undefined ? "SFOn" : "Off",
                        separator:data.lastConfig.conf[0].components.separator!= undefined ? "Off" : "Off",
                        Lighting:data.lastConfig.conf[0].components.lighting != undefined ? "On" : "Off"
                      }
@@ -198,7 +198,7 @@ export default class CabinAircraft extends React.Component {
                           OverHeadVideo:data.lastConfig.conf[0].components.ife.OverHeadVideo != undefined ? data.lastConfig.conf[0].components.ife.OverHeadVideo.number : 0,
                           inSeatPower:data.lastConfig.conf[0].components.ife.inSeatPower != undefined ? true : false,
                           ClassDivider:data.lastConfig.conf[0].components.ife.ClassDivider != undefined ? true : false,
-                          avodEco:data.lastConfig.conf[0].components.ife.avodEco != undefined ? true : data.lastConfig.conf[0].components.ife.avod != undefined ? true : false,
+                          avodEco:data.lastConfig.conf[0].components.ife.avodEco != undefined ? true  : false,
                           inSeatAudioEco:data.lastConfig.conf[0].components.ife.inSeatAudioEco != undefined ? true : false,
                           OverHeadVideoEco:data.lastConfig.conf[0].components.ife.OverHeadVideoEco != undefined ? data.lastConfig.conf[0].components.ife.OverHeadVideoEco.number : 0,
                           inSeatPowerEco:data.lastConfig.conf[0].components.ife.inSeatPowerEco != undefined ? true : false}
@@ -255,8 +255,8 @@ export default class CabinAircraft extends React.Component {
 
         render() {
           return (
-            <div style={{paddingTop:'80px',background:'white',margin:'1%'}}>
-            <div className="hover00" style={{position: 'relative', width: '1315px', height: '250px',color:'black',margin:'auto'}} >
+            <div style={{paddingTop:'80px',background:'#D3D3D3',margin:'1%'}}>
+            <div style={{position: 'relative', width: '1315px', height: '250px',color:'black',margin:'auto'}} >
             <img  onMouseOver={this.changeLopaimg.bind(this)} onMouseOut={this.changeLopaimgOut.bind(this)} src={"img/"+this.state.lalopa+".png"} style={{position: 'relative', zIndex: '1'}} />
             {/**
               **
@@ -265,40 +265,39 @@ export default class CabinAircraft extends React.Component {
                */}
             <img src={"img/src/Business"+this.state.Business+".png"}
               title="Business Class"
-              className="hover01"
               onClick={this.clickedComponent.bind(this)}
-              style={{position: 'absolute',left:'361px', top: '106px',zIndex: '10',cursor:'pointer'}} />
-            <input type="text" value={this.state.businessSeats} className="seatsInput" style={{left:'330px',top: '113px'}} disabled/>
+              style={{position: 'absolute',left:'361px', top: '100px',zIndex: '10',cursor:'pointer'}} />
+            <input type="text" value={this.state.businessSeats} className="seatsInput" style={{left:'324px',top: '105px'}} disabled/>
 
             <img src={"img/src/PremiumOff.png"}
               title="Premium Class"
-              style={{position: 'absolute',left:'563px', top: '106px',zIndex: '10',cursor:'not-allowed'}} />
-            <input type="text" value={this.state.premiumSeats} className="seatsInput" style={{left:'532px',top: '113px'}} disabled/>
+              style={{position: 'absolute',left:'563px', top: '100px',zIndex: '10',cursor:'not-allowed'}} />
+            <input type="text" value={this.state.premiumSeats} className="seatsInput" style={{left:'526px',top: '105px'}} disabled/>
 
             <img src={"img/src/Seat"+this.state.Seat+".png"}
               title="Economic Class"
               onClick={this.clickedComponent.bind(this)}
-              style={{position: 'absolute',left:'822px', top: '106px',zIndex: '10',cursor:'pointer'}} />
-            <input type="text" value={this.state.seats} className="seatsInput" style={{left:'791px',top: '113px'}} disabled/>
+              style={{position: 'absolute',left:'822px', top: '100px',zIndex: '10',cursor:'pointer'}} />
+            <input type="text" value={this.state.seats} className="seatsInput" style={{left:'785px',top: '105px'}} disabled/>
             {/**
               **
               *
                IFE Business seats
                */}
             {this.state.avod ?
-              <img src={"img/src/AVOD.png"} title="AVOD"  style={{position: 'absolute',left:'375px', top: '150px',zIndex: '10'}} />
+              <img src={"img/src/AVOD.png"} title="AVOD"  style={{position: 'absolute',left:'331px', top: '152px',zIndex: '10'}} />
               :null}
             {this.state.inSeatAudio ?
-              <img src={"img/src/Audio.png"} title="In-seat Audio"  style={{position: 'absolute',left:'412px', top: '150px',zIndex: '10'}} />
+              <img src={"img/src/Audio.png"} title="In-seat Audio"  style={{position: 'absolute',left:'382px', top: '152px',zIndex: '10'}} />
               :null}
             {this.state.OverHeadVideo != 0 ?
-              <img src={"img/src/IFE.png"} title="Overhead video"  style={{position: 'absolute',left:'452px', top: '150px',zIndex: '10'}} />
+              <img src={"img/src/IFE.png"} title="Overhead video"  style={{position: 'absolute',left:'422px', top: '152px',zIndex: '10'}} />
               :null}
             {this.state.OverHeadVideo != 0 ?
-              <input type="text" value={this.state.OverHeadVideo} className="seatsInput" style={{left:'492px', top: '180px'}} disabled/>
+              <input type="text" value={this.state.OverHeadVideo} className="seatsInputIfe" style={{left:'445px', top: '165px'}} disabled/>
               :null}
             {this.state.inSeatPower ?
-              <img src={"img/src/Connect.png"} title="In-seat power" style={{position: 'absolute',left:'322px', top: '150px',zIndex: '10'}} />
+              <img src={"img/src/Connect.png"} title="In-seat power" style={{position: 'absolute',left:'292px', top: '152px',zIndex: '10'}} />
               :null}
               {/**
                 **
@@ -306,19 +305,19 @@ export default class CabinAircraft extends React.Component {
                  IFE Economic seats
                  */}
             {this.state.avodEco ?
-              <img src={"img/src/AVOD.png"} title="AVOD"  style={{position: 'absolute',left:'830px', top: '150px',zIndex: '10'}} />
+              <img src={"img/src/AVOD.png"} title="AVOD"  style={{position: 'absolute',left:'782px', top: '154px',zIndex: '10'}} />
               :null}
             {this.state.inSeatAudioEco ?
-              <img src={"img/src/Audio.png"} title="In-seat Audio" style={{position: 'absolute',left:'742px', top: '150px',zIndex: '10'}} />
+              <img src={"img/src/Audio.png"} title="In-seat Audio" style={{position: 'absolute',left:'835px', top: '152px',zIndex: '10'}} />
               :null}
             {this.state.OverHeadVideoEco != 0 ?
-              <img src={"img/src/IFE.png"} title="Overhead video" style={{position: 'absolute',left:'872px', top: '150px',zIndex: '10'}} />
+              <img src={"img/src/IFE.png"} title="Overhead video" style={{position: 'absolute',left:'872px', top: '152px',zIndex: '10'}} />
               :null}
             {this.state.OverHeadVideoEco != 0 ?
-              <input type="text" value={this.state.OverHeadVideoEco} className="seatsInput" style={{left:'912px', top: '180px'}} disabled/>
+              <input type="text" value={this.state.OverHeadVideoEco} className="seatsInputIfe" style={{left:'895px', top: '163px'}} disabled/>
               :null}
             {this.state.inSeatPowerEco ?
-              <img src={"img/src/Connect.png"} title="In-seat power" style={{position: 'absolute',left:'782px', top: '150px',zIndex: '10'}} />
+              <img src={"img/src/Connect.png"} title="In-seat power" style={{position: 'absolute',left:'742px', top: '152px',zIndex: '10'}} />
               :null}
               {/**
                 **
@@ -326,7 +325,7 @@ export default class CabinAircraft extends React.Component {
                  class divider icons
                  */}
             {this.state.businessSeats != 0 && this.state.ClassDivider  ?
-              <img src={"img/src/separators.png"} title="Divider" style={{position: 'absolute',left:'520px', top: '47px',zIndex: '10'}} />
+              <img src={"img/src/separators.png"} title="Divider" style={{position: 'absolute',left:'480px', top: '44px',zIndex: '10'}} />
               :null}
               {/**
                 **
@@ -334,13 +333,13 @@ export default class CabinAircraft extends React.Component {
                  Lighting icons
                  */}
             {this.state.moodLightning  ?
-              <img src={"img/src/moodLightning.png"} title="Mood lighting" style={{position: 'absolute',left:'535px', top: '-70px',zIndex: '10'}} />
+              <img src={"img/src/mood.png"} title="Mood lighting" style={{position: 'absolute',left:'560px', top: '-73px',zIndex: '10'}} />
               :null}
             {this.state.floorMointed  ?
-              <img src={"img/src/floorMointed.png"} title="Floor mointed" style={{position: 'absolute',left:'570px', top: '-70px',zIndex: '10'}} />
+              <img src={"img/src/FLOOR-MOUNTED.png"} title="Floor mointed" style={{position: 'absolute',left:'595px', top: '-73px',zIndex: '10'}} />
               :null}
             {this.state.handrailLightning  ?
-              <img src={"img/src/handrailLightning.png"} title="handrail lighting" style={{position: 'absolute',left:'600px', top: '-70px',zIndex: '10'}} />
+              <img src={"img/src/handrai.png"} title="handrail lighting" style={{position: 'absolute',left:'625px', top: '-73px',zIndex: '10'}} />
               :null}
 
               {/**
@@ -349,63 +348,71 @@ export default class CabinAircraft extends React.Component {
                  back aircraft icons
                  */}
 
-            <img src={"img/src/toiletsX2"+this.state.Toilets+".png"} title="Lavatory" onClick={this.clickedComponent.bind(this)} style={{position: 'absolute',left:'1074px', top: '142px',zIndex: '10',cursor:'pointer'}} />
-            <img src={"img/src/CafeSF"+this.state.cafe+".png"} title="Galley" onClick={this.clickedComponent.bind(this)} style={{position: 'absolute',left:'1074px', top: '62px',zIndex: '10',cursor:'pointer'}} />
-            <img src={"img/src/separator"+this.state.separator+".png"}  title="wind Screen" onClick={this.clickedComponent.bind(this)} style={{position: 'absolute',left:this.state.separator != "Off" ?'976px':'996px', top:this.state.separator != "Off" ?'50px':'45px',zIndex: '10',cursor:'pointer'}} />
-            <img src="img/source/COFFEE.png" title="Galley" style={{position: 'absolute',left:'982px', top: '157px',zIndex: '10',cursor:'not-allowed'}} />
+            <img src={"img/src/toilets"+this.state.Toilets+".png"} title="Lavatory" onClick={this.clickedComponent.bind(this)} style={{position: 'absolute',left:'1075px', top: '129px',zIndex: '10',cursor:'pointer'}} />
+            <img src={"img/src/Cafe"+this.state.cafe+".png"} title="Galley" onClick={this.clickedComponent.bind(this)} style={{position: 'absolute',left:'1075px', top: '78px',zIndex: '10',cursor:'pointer'}} />
+            <img src={"img/src/separator"+this.state.separator+".png"}  title="wind Screen" onClick={this.clickedComponent.bind(this)} style={{position: 'absolute',left:this.state.separator != "Off" &&this.state.separator != "On" &&this.state.separator != "Active" ?'983px':'994px', top:this.state.separator != "Off" && this.state.separator !="On"&&this.state.separator != "Active" ?'69px':'53px',zIndex: '10',cursor:'pointer'}} />
+            {/*<img src="img/source/separatorOn.png" title="Galley" style={{position: 'absolute',left:'996px', top: '143px',zIndex: '10',cursor:'not-allowed'}} />*/}
             {/**
               **
               *
                front aircraft icons
                */}
-            <img src="img/src/toiletsOff.png"  style={{position: 'absolute',left:'122px', top: '142px',zIndex: '10',cursor:'not-allowed'}} />
-            <img src="img/src/CafeOff.png"  style={{position: 'absolute',left:'122px', top: '62px',zIndex: '10',cursor:'not-allowed'}} />
+            <img src="img/src/toiletsOff.png"  style={{position: 'absolute',left:'128px', top: '135px',zIndex: '10',cursor:'not-allowed'}} />
+            <img src="img/src/CafeOff.png"  style={{position: 'absolute',left:'128px', top: '69px',zIndex: '10',cursor:'not-allowed'}} />
             {/*  <img src="img/src/cintreOff.png"  style={{position: 'absolute',left:'266px', top: '48px',zIndex: '10',cursor:'not-allowed'}} />
-            <img src="img/src/cintreOff.png"  style={{position: 'absolute',left:'266px', top: '148px',zIndex: '10',cursor:'not-allowed'}} />*/}
+            <img src="img/src/cintreOff.png"  style={{position: 'absolute',left:'266px', top: '148px',zIndex: '10',cursor:'not-allowed'}} />
             <img src="img/src/separator.png"  style={{position: 'absolute',left:'242px', top: '149px',zIndex: '10',cursor:'not-allowed'}} />
-            <img src="img/src/separator.png"  style={{position: 'absolute',left:'242px', top: '44px',zIndex: '10',cursor:'not-allowed'}} />
+            <img src="img/src/separator.png"  style={{position: 'absolute',left:'242px', top: '44px',zIndex: '10',cursor:'not-allowed'}} />*/}
             {/**
               **
               *
                Connectivity icon
                */}
-            <img src="img/src/Wifi.png" style={{position: 'absolute',left:'150px', top: '-30px',zIndex: '10',cursor:'not-allowed'}}/>
-            <div style={{position: 'absolute',left:'190px', top: '-17px',zIndex: '10'}} >Connectivity</div>
-            <img src="img/src/barre.png" style={{position: 'absolute',left:'150px', top: '-32px',zIndex: '10'}} />
+            <img src="img/src/Wifi.png" style={{position: 'absolute',left:'150px', top: '-31px',zIndex: '10',cursor:'not-allowed'}}/>
+            <div style={{position: 'absolute',left:'190px', top: '-27px',zIndex: '10'}} >Connectivity</div>
+            <img src="img/src/barre.png" style={{position: 'absolute',left:'150px', top: '-42px',zIndex: '10'}} />
             {/**
               **
               *
                Bins icons
                */}
-            <img src="img/src/MusicOff.png" style={{position: 'absolute',left:'350px', top: '-30px',zIndex: '10',cursor:'not-allowed'}}/>
-            <div style={{position: 'absolute',left:'390px', top: '-17px',zIndex: '10'}} >Bins</div>
-            <img src="img/src/barre.png" style={{position: 'absolute',left:'350px', top: '-32px',zIndex: '10'}} />
+            <img src="img/src/MusicOff.png" style={{position: 'absolute',left:'372px', top: '-31px',zIndex: '10',cursor:'not-allowed'}}/>
+            <div style={{position: 'absolute',left:'412px', top: '-27px',zIndex: '10'}} >Bins</div>
+            <img src="img/src/barre.png" style={{position: 'absolute',left:'350px', top: '-42px',zIndex: '10'}} />
             {/**
               **
               *
                lighting config icons
                */}
-            <img src={"img/src/Ampoule"+this.state.Lighting+".png"} title="Lighting" onClick={this.clickedComponent.bind(this)} style={{position: 'absolute',left:'550px', top: '-30px',zIndex: '10',cursor:'pointer'}}/>
-            <div style={{position: 'absolute',left:'590px', top: '-17px',zIndex: '10'}} >Lighting</div>
-            <img src="img/src/barre.png" style={{position: 'absolute',left:'550px', top: '-32px',zIndex: '10'}} />
+            <img src={"img/src/Ampoule"+this.state.Lighting+".png"} title="Lighting" onClick={this.clickedComponent.bind(this)} style={{position: 'absolute',left:'565px', top: '-31px',zIndex: '10',cursor:'pointer'}}/>
+            <div style={{position: 'absolute',left:'605px', top: '-27px',zIndex: '10'}} >Lighting</div>
+            <img src="img/src/barre.png" style={{position: 'absolute',left:'550px', top: '-42px',zIndex: '10'}} />
             {/**
               **
               *
                cabin crew icons
                */}
-            <img src="img/src/AmpouleOff.png" style={{position: 'absolute',left:'750px', top: '-30px',zIndex: '10',cursor:'not-allowed'}}/>
-            <div style={{position: 'absolute',left:'790px', top: '-17px',zIndex: '10'}} >Cabin Crew</div>
-            <div style={{position: 'absolute',left:'780px', top: '-55px',zIndex: '10'}}>CAS 4</div>
-            <img src="img/src/barre.png" style={{position: 'absolute',left:'750px', top: '-32px',zIndex: '10'}} />
+            <img src="img/src/cabin_crew.png" style={{position: 'absolute',left:'755px', top: '-31px',zIndex: '10',cursor:'not-allowed'}}/>
+            <div style={{position: 'absolute',left:'793px', top: '-27px',zIndex: '10'}} >Cabin Crew</div>
+            <div style={{position: 'absolute',left:'790px', top: '-65px',zIndex: '10'}}>CAS 4</div>
+            <img src="img/src/barre.png" style={{position: 'absolute',left:'750px', top: '-42px',zIndex: '10'}} />
             {/**
               **
               *
                Exits icons
                */}
-            <img src="img/src/AmpouleOff.png" style={{position: 'absolute',left:'950px', top: '-30px',zIndex: '10',cursor:'not-allowed'}}/>
-            <div style={{position: 'absolute',left:'990px', top: '-17px',zIndex: '10'}} >Exits</div>
-            <img src="img/src/barre.png" style={{position: 'absolute',left:'950px', top: '-32px',zIndex: '10'}} />
+            <img src="img/src/EXIT.png" style={{position: 'absolute',left:'973px', top: '-31px',zIndex: '10',cursor:'not-allowed'}}/>
+            <div style={{position: 'absolute',left:'1013px', top: '-27px',zIndex: '10'}} >Exits</div>
+            <img src="img/src/barre.png" style={{position: 'absolute',left:'950px', top: '-42px',zIndex: '10'}} />
+            {/**
+              **
+              *
+              total seats
+              */}
+              <img src="img/totalSeats.png" style={{position: 'absolute',left:'-5px', top: '-71px',zIndex: '10'}}/>
+              <input type="text" value={this.state.seats+this.state.premiumSeats+this.state.businessSeats} className="seatsInput_total" style={{left:'106px', top: '-63px'}} disabled/>
             </div>
+
             <div style={{background:"#333333",height:"5px"}}></div>
             {this.state.display ? <Content/> :  <Content/> }
             </div>

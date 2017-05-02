@@ -19,9 +19,9 @@ export default class Separator extends React.Component {
       description:7,
       windScreen:true,
       lavatoryPrice:153900,
-      galleyG3DryHsPrice: 75000,
-      galleyG3DryFsPrice: 70000,
-      galleyG3WetFsPrice:85000,
+      galleyG3DryHsPrice: 97400,
+      galleyG3DryFsPrice: 123650,
+      galleyG3WetFsPrice:123650,
       lavatory:false,
       galleyG3DryHs: false,
       galleyG3DryFs: false,
@@ -56,23 +56,24 @@ export default class Separator extends React.Component {
     let galleyG3DryFs = ($('#galleyG3DryFs:checked').val() === "yes" ? true : false);
     let galleyG3WetFs = ($('#galleyG3WetFs:checked').val() === "yes" ? true : false);
     let UpdateOnOffSeats = OnOffStore.get()
-    this.state.check === "windScreen" ? UpdateOnOffSeats.separator = "Off"
-      :this.state.check === "lavatory" ? UpdateOnOffSeats.separator = "1On"
-      : UpdateOnOffSeats.separator = "3On"
+
+    if(windScreen){
+      UpdateOnOffSeats.separator = "On"
+    }else if(lavatory){
+      UpdateOnOffSeats.separator = "1On"
+    }else{
+      UpdateOnOffSeats.separator = "3On"
+    }
+
     OnOffStore.setOnOffObject(UpdateOnOffSeats)
 
     SeparatorStore.setSeparator({windScreen:windScreen,lavatory:lavatory,galleyG3DryHs:galleyG3DryHs,galleyG3DryFs:galleyG3DryFs,galleyG3WetFs:galleyG3WetFs})
-    CustoStore.setCusto({lavatory:this.state.lavatoryCusto,
-          galleyG3DryHs:this.state.galleyG3DryHsCusto,
-          galleyG3DryFs:this.state.galleyG3DryFsCusto,
-          galleyG3WetFs:this.state.galleyG3WetFsCusto})
 
     PriceCabinStore.setPriceCabin(cabinPricing())
     PriceGlobalStore.setPriceGlobal(globalPricing())
   }
 
   myChangeHandler(event){
-    console.log(event.target.value)
     let result = event.target.value
     let lavatoryPrice = this.state.lavatoryPrice
     let galleyG3DryHsPrice = this.state.galleyG3DryHsPrice
@@ -85,19 +86,20 @@ export default class Separator extends React.Component {
     let galleyG3WetFsCusto= this.state.galleyG3WetFsCusto
 
     if(result === "Effecient" || result === "Confort" || result === "Standard"){
-       lavatoryPrice = (result === "Effecient" ? 1888900 : result === "Confort" ? 163900 : 153900)
-       lavatoryCusto = result
+       lavatoryPrice = (result === "Effecient" ? 163900 : result === "Confort" ? 188890 : 153900)
+       lavatoryCusto = (result === "Effecient" ? "Efficient" : result === "Confort" ? "Comfort" : "Standard")
     }
     else if(result === "EffecientgalleyG3DryHs" || result === "ConfortgalleyG3DryHs" || result === "StandardgalleyG3DryHs"){
-       galleyG3DryHsPrice = (result === "EffecientgalleyG3DryHs" ? 114800 : result === "ConfortgalleyG3DryHs" ? 85000 : 75000)
+       galleyG3DryHsPrice = (result === "EffecientgalleyG3DryHs" ? 112400 : result === "ConfortgalleyG3DryHs" ? 142300 : 97400)
        galleyG3DryHsCusto = (result === "EffecientgalleyG3DryHs" ? "Efficient" : result === "ConfortgalleyG3DryHs" ? "Comfort" : "Standard")
     }
     else if(result === "EffecientgalleyG3DryFs" || result === "ConfortgalleyG3DryFs" || result === "StandardgalleyG3DryFs"){
-       galleyG3DryFsPrice = (result === "EffecientgalleyG3DryFs" ? 137800 : result === "ConfortgalleyG3DryFs" ? 122500 : 70000)
+       galleyG3DryFsPrice = (result === "EffecientgalleyG3DryFs" ? 138650 : result === "ConfortgalleyG3DryFs" ? 168500 : 123650)
        galleyG3DryFsCusto = (result === "EffecientgalleyG3DryFs" ? "Efficient" : result === "ConfortgalleyG3DryFs" ? "Comfort" : "Standard")
     }else{
-       galleyG3WetFsPrice = (result === "EffecientgalleyG3WetFs" ? 145900 : result === "ConfortgalleyG3WetFs" ? 137600 : 85000)
+       galleyG3WetFsPrice = (result === "EffecientgalleyG3WetFs" ? 138650 : result === "ConfortgalleyG3WetFs" ? 168500 : 123650)
        galleyG3WetFsCusto = (result === "EffecientgalleyG3WetFs" ? "Efficient" : result === "ConfortgalleyG3WetFs" ? "Comfort" : "Standard")
+       galleyG3WetFsCusto === "Standard" ? this.setState({description:11}) : galleyG3WetFsCusto === "Efficient" ? this.setState({description:20}) : this.setState({description:21})
     }
     this.setState({
       lavatoryPrice:lavatoryPrice,
@@ -109,16 +111,28 @@ export default class Separator extends React.Component {
       galleyG3DryFsCusto:galleyG3DryFsCusto,
       galleyG3WetFsCusto:galleyG3WetFsCusto
     })
+    CustoStore.setCusto({lavatory:lavatoryCusto,
+          galleyG3DryHs:galleyG3DryHsCusto,
+          galleyG3DryFs:galleyG3DryFsCusto,
+          galleyG3WetFs:galleyG3WetFsCusto})
+    console.log(CustoStore.get())
   }
   myChangeCheck(event){
     let myCheckBox = event.target.id;
-    this.setState({check:myCheckBox})
+
     myCheckBox != "windScreen" ? $("#windScreen").prop("checked", false) : $("#windScreen").prop("checked", true)
     myCheckBox != "lavatory" ? $("#lavatory").prop("checked", false) : $("#lavatory").prop("checked", true)
     myCheckBox != "galleyG3DryHs" ? $("#galleyG3DryHs").prop("checked", false) : $("#galleyG3DryHs").prop("checked", true)
     myCheckBox != "galleyG3DryFs" ? $("#galleyG3DryFs").prop("checked", false) : $("#galleyG3DryFs").prop("checked", true)
     myCheckBox != "galleyG3WetFs" ? $("#galleyG3WetFs").prop("checked", false) : $("#galleyG3WetFs").prop("checked", true)
+    myCheckBox === "windScreen" ? this.state.description = 7
+      : (myCheckBox === "lavatory" ? this.state.description = 8
+          :(myCheckBox === "galleyG3DryHs" ? this.state.description = 9
+              :(myCheckBox === "galleyG3DryFs" ? this.state.description = 10
+                  :(myCheckBox === "galleyG3WetFs" ? this.state.description = 11 : null ))))
 
+
+    this.setState(this.state)
   }
   render() {
     return (
@@ -131,12 +145,14 @@ export default class Separator extends React.Component {
             <tbody>
               <tr>
                 <td><input type="checkbox" id="windScreen" value="yes" defaultChecked={this.state.windScreen} onClick={this.myChangeCheck.bind(this)}/></td>
-                <td className="tdSolidBorderLeft"><label labelFor="windScreen" onClick={() =>{this.setState({description:7})}} className={this.state.description == 7 ? "selectedElement" : ""}>windScreen</label></td>
+                <td className="tdSolidBorderLeft"><label  style={{marginLeft:"36px"}} labelFor="windScreen" onClick={() =>{this.setState({description:7})}} className={this.state.description == 7 ? "selectedElement" : ""}>Wind Screen</label></td>
                 <td className="tdSolidBorder">{formatter(29000)}</td>
               </tr>
               <tr>
                 <td><input type="checkbox" id="lavatory" value="yes" defaultChecked={this.state.lavatory} onClick={this.myChangeCheck.bind(this)}/></td>
-                <td className="tdSolidBorderLeft"><label labelFor="lavatory" onClick={() =>{this.setState({description:8})}} className={this.state.description == 8 ? "selectedElement" : ""}>Lavatory</label></td>
+                <td className="tdSolidBorderLeft">
+                <img src="img/src/toiletsblanc.png" style={{marginRight:"10px"}}/>
+                <label labelFor="lavatory" onClick={() =>{this.setState({description:8})}} className={this.state.description == 8 ? "selectedElement" : ""}>Lavatory</label></td>
                 <td className="tdSolidBorder">{formatter(this.state.lavatoryPrice)}</td>
                 <td>
                   <select onChange={this.myChangeHandler.bind(this)}>
@@ -148,7 +164,9 @@ export default class Separator extends React.Component {
               </tr>
               <tr>
                 <td><input type="checkbox" id="galleyG3DryHs" value="yes" defaultChecked={this.state.galleyG3DryHs} onClick={this.myChangeCheck.bind(this)}/></td>
-                <td className="tdSolidBorderLeft"><label labelFor="galleyG3DryHs" onClick={() =>{this.setState({description:9})}} className={this.state.description == 9 ? "selectedElement" : ""}>galleyG3DryHs</label></td>
+                <td className="tdSolidBorderLeft">
+                <img src="img/src/galleyblanc.png" style={{marginRight:"10px"}}/>
+                <label labelFor="galleyG3DryHs" onClick={() =>{this.setState({description:9})}} className={this.state.description == 9 ? "selectedElement" : ""}>Galley G3 Dry HS</label></td>
                 <td className="tdSolidBorder">{formatter(this.state.galleyG3DryHsPrice)}</td>
                 <td>
                   <select onChange={this.myChangeHandler.bind(this)}>
@@ -160,10 +178,12 @@ export default class Separator extends React.Component {
               </tr>
               <tr>
                 <td><input type="checkbox" id="galleyG3DryFs" value="yes" defaultChecked={this.state.galleyG3DryFs} onClick={this.myChangeCheck.bind(this)}/></td>
-                <td  className="tdSolidBorderLeft"><label labelFor="galleyG3DryFs" onClick={() =>{this.setState({description:10})}} className={this.state.description == 10 ? "selectedElement" : ""}>galleyG3DryFs</label></td>
+                <td  className="tdSolidBorderLeft">
+                <img src="img/src/galleyblanc.png" style={{marginRight:"10px"}}/>
+                <label labelFor="galleyG3DryFs" onClick={() =>{this.setState({description:10})}} className={this.state.description == 10 ? "selectedElement" : ""}>Galley G3 Dry FS</label></td>
                 <td  className="tdSolidBorder">{formatter(this.state.galleyG3DryFsPrice)}</td>
                 <td>
-                  <select onChange={this.myChangeHandler.bind(this)}>
+                  <select  onChange={this.myChangeHandler.bind(this)}>
                     <option value="StandardgalleyG3DryFs">Standard</option>
                     <option value="EffecientgalleyG3DryFs">Efficient</option>
                     <option value="ConfortgalleyG3DryFs">Comfort</option>
@@ -172,7 +192,9 @@ export default class Separator extends React.Component {
               </tr>
               <tr>
                 <td><input type="checkbox" id="galleyG3WetFs" value="yes" defaultChecked={this.state.galleyG3WetFs} onClick={this.myChangeCheck.bind(this)}/></td>
-                <td className="tdSolidBorderLeft"><label labelFor="galleyG3WetFs" onClick={() =>{this.setState({description:11})}} className={this.state.description == 11 ? "selectedElement" : ""}>galleyG3WetFs</label></td>
+                <td className="tdSolidBorderLeft">
+                <img src="img/src/galleyblanc.png" style={{marginRight:"10px"}}/>
+                <label labelFor="galleyG3WetFs" onClick={() =>{this.setState({description:11})}} className={this.state.description == 11 ||this.state.description == 21 || this.state.description ==20 ? "selectedElement" : ""}>Galley G3 Wet FS</label></td>
                 <td className="tdSolidBorder">{formatter(this.state.galleyG3WetFsPrice)}</td>
                 <td>
                   <select onChange={this.myChangeHandler.bind(this)}>
@@ -185,7 +207,7 @@ export default class Separator extends React.Component {
               </tbody>
             </table>
           </div>
-          <button className="btn btn-primary ValidateButton" style={{position:'absolute',float:'right',right:'23px',marginTop:'230px'}} onClick={this.validate.bind(this)}>VALIDATE</button>
+          <button className="btn btn-primary ValidateButton" style={{position:'absolute',float:'right',right:'23px',marginTop:'235px'}} onClick={this.validate.bind(this)}>VALIDATE</button>
           <DescriptionCabin value={this.state.description}/>
         </Collapse>
     )

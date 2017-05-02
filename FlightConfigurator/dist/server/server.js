@@ -13,7 +13,7 @@ app.use('/pdf', express.static(projectDir + '/data/json/output.pdf'));
 app.use('/json', express.static(projectDir+'/data/json'));
 require('./saveLastConf')(app, projectDir+'/data/json')
 // Set server port
-app.listen(4000, function() {
-    console.log('server listening on port 4000');
+app.listen(process.env.PORT || 5000, function() {
+    console.log('server listening on port 8080');
 });
 console.log('server is running');

@@ -42,7 +42,7 @@ $(document).ready(function() {
 							<Route path="SelectorConf" component={SelectorConf} />
 							<Route path="CustomerCare" component={CustomerCare} />
 							<Route path="WelcomeConfig" component={WelcomeConfig} />
-							{<Route path="Livery" component={Livery} />}
+							{/*<Route path="Livery" component={Livery} />*/}
 							<Route path="Summary" component={Summary} />
 						</Route>
 					</Router>,

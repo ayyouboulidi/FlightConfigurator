@@ -4,7 +4,7 @@
         "id":0,
         "img":"img/Seat_First.jpg",
         "comment":"img/test.gif",
-        "title":"Large Choice of BFE B/C seats",
+        "title":"B/C BFE seats",
         "desc":"The B/C mechanical business class seat offers a variety of comfort features. Passengers will experience a comfortable flight thanks to  generous recline and an oversized headrest."
       },
       {
@@ -28,7 +28,7 @@
       {
         "id":4,
         "img":"img/In_Sear_Power.jpg",
-        "title":"Large Choice of BFE B/C seats",
+        "title":"In-seat power",
         "desc":"In Seat Power by  Airbus is one of the most technologically advanced aircraft in-seat power and cabin power management systems. The product is designed to guarantee airline passengers sufficient power to use their personal electronic devices, including laptops, smartphones and tablets, while in flight."
       },
       {
@@ -75,7 +75,7 @@
       },
       {
         "id":12,
-        "img":"img/Galley_G5.jpg",
+        "img":"img/Galley_G4.jpg",
         "title":"Customize your galley",
         "desc":"Galley G4, 4 FS"
       },
@@ -93,7 +93,7 @@
       },
       {
         "id":15,
-        "img":"img/Galley_G5.jpg",
+        "img":"img/Galley_G4A.jpg",
         "title":"Free up space for additional seats",
         "desc":"Premium galley design with further provisions for a high number of additional options. Flexibility to provision for or to install multiple galley cooling options."
       },
@@ -112,14 +112,32 @@
       {
         "id":18,
         "img":"img/OHSC_Handrail.jpg",
-        "title":"Light as a consistent branding message",
-        "desc":"Handrail branding can remain, even when lights are dimmed"
+        "title":"Airspace Handrail illumination",
+        "desc":"Light as a consistent branding message"
       },
       {
         "id":19,
         "img":"img/Seat_Second.jpg",
-        "title":"Large Choice of BFE B/C seats",
-        "desc":"The B/C mechanical business class seat offers a variety of comfort features. Passengers will experience a comfortable flight thanks to  generous recline and an oversized headrest."
+        "title":"Y/C BFE seats",
+        "desc":"Large Choice of BFE Seats. Refer to our catalogue to have an overview of the choice."
+      },
+      {
+        "id":20,
+        "img":"img/Galley3_Wet_FS_Efficient.jpg",
+        "title":"Efficient G3",
+        "desc":"Add ovens and coffee makers as required by your service"
+      },
+      {
+        "id":21,
+        "img":"img/Galley3_Wet_FS_Comfort.jpg",
+        "title":"Comfort G3",
+        "desc":"More capabilities with chilling and build-in flexibility for more service to your passengers"
+      },
+      {
+        "id":22,
+        "img":"img/classdivider.png",
+        "title":"Class dividers",
+        "desc":"Business class section"
       }
     ]
   }

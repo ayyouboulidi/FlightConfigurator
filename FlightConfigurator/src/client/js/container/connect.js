@@ -71,13 +71,15 @@ getConnections() {
     return (
       <div className="connect">
               <img src="img/src/CarréBlancDégradé.png" style={{position:'absolute',top:'0%',right:'3%'}}/>
-              <img src="img/src/logoCo.png" style={{position:'absolute',top:'3%',right:'12%'}}/>
+              <img src="img/src/logoCo.png" style={{position:'absolute',top:'3%',right:'11%'}}/>
               <img src="img/src/5avions.png" style={{width:'100%',height:'100%'}}/>
+              <div style={{position:'absolute',top:'13%',right:'11%',fontSize:'22px'}}>Welcome to your configurator</div>
+              <hr style={{border:'solid 1px white',position:'absolute',width:'99.8%',top:'12%'}}></hr>
               <div className="projectConnect">
-                <div><input id="login" type="text" className="inputLogin"/></div>
-                <div><input id="password" type="password" className="inputPassword"/></div>
+                <div><input id="login" type="text" className="inputLogin" placeholder=" Login"/></div>
+                <div><input id="password" type="password" className="inputPassword" placeholder=" Password"/></div>
                 <br></br>
-                <div><Link to={this.state.gotoPage} className="btn btn-primary ValidateButton" onMouseOver={this.connectTo.bind(this)}>VALIDATE</Link></div>
+                <div><Link to={this.state.gotoPage} className="btn btn-primary ValidateButton" style={{marginRight: '-15%',marginTop: '15%',width: '130px'}} onMouseOver={this.connectTo.bind(this)}>VALIDATE</Link></div>
               </div>
       </div>
     )

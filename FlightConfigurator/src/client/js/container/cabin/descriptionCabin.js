@@ -23,7 +23,7 @@ export default class DescriptionCabin extends React.Component {
 
   render() {
     return (
-      this.state.data == null ? <div>...Loading</div> :
+      this.state.data == null ? <div  className="rightPanel">...Loading</div> :
       <div className="rightPanel">
         <div className="leftPanelDesc">
           <img src={this.state.data.description.bfe[parseInt(this.props.value)].img} className="imageConfDesc"/>
